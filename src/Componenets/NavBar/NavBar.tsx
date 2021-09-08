@@ -3,15 +3,16 @@ import {AppBar, Grid, Toolbar} from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import SimpleMenu from "./Menu";
 import {useStyles} from "../Styles/Styles";
-import useWindowSize from "../CheekWindowSize/CheekWindowSize";
+import useWindowSize from "../CheekWindowSize/CheekWindowSize"; //kallar in funtion kollar window storlek
 
 
 export default function NavBar() {
     const classes = useStyles();
-    const [cheeekWindowSize,seTcheeekWindowSize]=useState<boolean>();
-    const {width, height} = useWindowSize()
+    const [cheeekWindowSize,seTcheeekWindowSize]=useState<boolean>();//har boolean värde:  är  störe en 600
+    const {width, height} = useWindowSize() //  värdet av winwStorlek
 
     useEffect(()=>{
+        //kollar om width mindre än 60
         width <600 ? seTcheeekWindowSize(false):seTcheeekWindowSize(true)
     })
 
@@ -20,7 +21,7 @@ export default function NavBar() {
             <AppBar position="static">
                 <Toolbar>
                     <IconButton edge="start" className={classes.navBarMenuButton} color="inherit" aria-label="menu">
-                        {   cheeekWindowSize!= true?<SimpleMenu/>: ""}
+                        {   cheeekWindowSize!= true?<SimpleMenu/>: null} // visar meny om windows brädd är mindre än 600
                     </IconButton>
                     <Grid container
                           direction="row"
@@ -28,16 +29,17 @@ export default function NavBar() {
                           alignItems="center"
                     >
                         <Grid item>
-                            {cheeekWindowSize!=false? "Mina sidor" :""}
+                            //döljer text om windowa är bredare än 600
+                            {cheeekWindowSize!=false? "Mina sidor" :null}  //texten är platshållare för Router länkar implementeras framöver
                         </Grid>
                         <Grid item>
-                            {cheeekWindowSize!=false? "Skapa Annons" :""}
+                            {cheeekWindowSize!=false? "Skapa Annons" :null}
                         </Grid>
                         <Grid item>
-                            {cheeekWindowSize!=false? "Studenter/Lia Sökare" :""}
+                            {cheeekWindowSize!=false? "Studenter/Lia Sökare" :null}
                         </Grid>
                         <Grid item>
-                            {cheeekWindowSize!=false? "Favoriter" :""}
+                            {cheeekWindowSize!=false? "Favoriter" :null}
                         </Grid>
                         <Grid item>
 
