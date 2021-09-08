@@ -21,17 +21,18 @@ export default function NavBar() {
             <AppBar position="static">
                 <Toolbar>
                     <IconButton edge="start" className={classes.navBarMenuButton} color="inherit" aria-label="menu">
-                        {   cheeekWindowSize!= true?<SimpleMenu/>: null} // visar meny om windows brädd är mindre än 600
+                        {   cheeekWindowSize!= true?<SimpleMenu/>: null}
                     </IconButton>
                     <Grid container
                           direction="row"
                           justify="space-around"
                           alignItems="center"
                     >
+                        {/*döljer text om windowa är bredare än 600*/}
                         <Grid item>
-                            //döljer text om windowa är bredare än 600
-                            {cheeekWindowSize!=false? "Mina sidor" :null}  //texten är platshållare för Router länkar implementeras framöver
+                            {/*texten är platshållare för Router länkar implementeras framöver*/}
                         </Grid>
+                            {cheeekWindowSize!=false? "Mina sidor" :null}
                         <Grid item>
                             {cheeekWindowSize!=false? "Skapa Annons" :null}
                         </Grid>
