@@ -1,21 +1,26 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {AppBar, Grid, Toolbar} from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import SimpleMenu from "./Menu";
 import {useStyles} from "../Styles/Styles";
- import useWindowSize from "../CheekWindowSize/CheekWindowSize";
+import useWindowSize from "../CheekWindowSize/CheekWindowSize";
 
 
 export default function NavBar() {
     const classes = useStyles();
-    const { width, height } = useWindowSize()
+    const [cheeekWindowSize,seTcheeekWindowSize]=useState<boolean>();
+    const {width, height} = useWindowSize()
+
+    useEffect(()=>{
+        width <600 ? seTcheeekWindowSize(false):seTcheeekWindowSize(true)
+    })
 
     return (
         <div className={classes.navBarRoot}>
             <AppBar position="static">
                 <Toolbar>
                     <IconButton edge="start" className={classes.navBarMenuButton} color="inherit" aria-label="menu">
-                        <SimpleMenu/>
+                        {   cheeekWindowSize!= true?<SimpleMenu/>: ""}
                     </IconButton>
                     <Grid container
                           direction="row"
@@ -23,16 +28,16 @@ export default function NavBar() {
                           alignItems="center"
                     >
                         <Grid item>
-                            Mina sidor {width}
+                            {cheeekWindowSize!=false? "Mina sidor" :""}
                         </Grid>
                         <Grid item>
-                            Skapa Annons
+                            {cheeekWindowSize!=false? "Skapa Annons" :""}
                         </Grid>
                         <Grid item>
-                            Lia Sökare
+                            {cheeekWindowSize!=false? "Studenter/Lia Sökare" :""}
                         </Grid>
                         <Grid item>
-                            Favoriter
+                            {cheeekWindowSize!=false? "Favoriter" :""}
                         </Grid>
                         <Grid item>
 
