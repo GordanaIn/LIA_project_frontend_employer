@@ -1,17 +1,14 @@
 import React from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import {AppBar, Grid, Toolbar} from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import SimpleMenu from "./Menu";
 import {useStyles} from "../Styles/Styles";
+ import useWindowSize from "../CheekWindowSize/CheekWindowSize";
 
 
 export default function NavBar() {
     const classes = useStyles();
+    const { width, height } = useWindowSize()
 
     return (
         <div className={classes.navBarRoot}>
@@ -20,10 +17,27 @@ export default function NavBar() {
                     <IconButton edge="start" className={classes.navBarMenuButton} color="inherit" aria-label="menu">
                         <SimpleMenu/>
                     </IconButton>
-                    <Typography variant="h6" className={classes.navBarTitle}>
-                        Arbetsgivare
-                    </Typography>
-                    <Button color="inherit">Login</Button>
+                    <Grid container
+                          direction="row"
+                          justify="space-around"
+                          alignItems="center"
+                    >
+                        <Grid item>
+                            Mina sidor {width}
+                        </Grid>
+                        <Grid item>
+                            Skapa Annons
+                        </Grid>
+                        <Grid item>
+                            Lia Sökare
+                        </Grid>
+                        <Grid item>
+                            Favoriter
+                        </Grid>
+                        <Grid item>
+
+                        </Grid>
+                    </Grid>
                 </Toolbar>
             </AppBar>
         </div>
