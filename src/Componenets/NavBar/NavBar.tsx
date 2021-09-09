@@ -4,9 +4,10 @@ import IconButton from '@material-ui/core/IconButton';
 import SimpleMenu from "./Menu";
 import {useStyles} from "../Styles/Styles";
 import useWindowSize from "../CheekWindowSize/CheekWindowSize"; //kallar in funtion kollar window storlek
+import {HashRouter as Router, Route, Link, Switch} from 'react-router-dom'
 
 
-export default function NavBar() {
+ const NavBar:React.FC<{}>=()=> {
     const classes = useStyles();
     const [cheeekWindowSize,seTcheeekWindowSize]=useState<boolean>();//har boolean värde:  är  störe en 600
     const {width, height} = useWindowSize() //  värdet av winwStorlek
@@ -32,12 +33,12 @@ export default function NavBar() {
                         <Grid item>
                             {/*texten är platshållare för Router länkar implementeras framöver*/}
                         </Grid>
-                            {cheeekWindowSize!=false? "Mina sidor" :null}
+                            {cheeekWindowSize!=false? <Link to="/TestOne">TesttOne</Link> :null}
                         <Grid item>
-                            {cheeekWindowSize!=false? "Skapa Annons" :null}
+                            {cheeekWindowSize!=false?  <Link to="/TestTwo">TestTwo</Link> :null}
                         </Grid>
                         <Grid item>
-                            {cheeekWindowSize!=false? "Studenter/Lia Sökare" :null}
+                            {cheeekWindowSize!=false? <Link to="/TestThree">TestThree</Link> :null}
                         </Grid>
                         <Grid item>
                             {cheeekWindowSize!=false? "Favoriter" :null}
@@ -51,3 +52,4 @@ export default function NavBar() {
         </div>
     );
 }
+export  default NavBar;
