@@ -22,7 +22,7 @@ import {HashRouter as Router, Route, Link, Switch} from 'react-router-dom'
             <AppBar position="static">
                 <Toolbar>
                     <IconButton edge="start" className={classes.navBarMenuButton} color="inherit" aria-label="menu">
-                        {   cheeekWindowSize!= true?<SimpleMenu/>: null}
+                        {   cheeekWindowSize!== true?<SimpleMenu/>: null}
                     </IconButton>
                     <Grid container
                           direction="row"
@@ -33,15 +33,15 @@ import {HashRouter as Router, Route, Link, Switch} from 'react-router-dom'
                         <Grid item>
                             {/*texten är platshållare för Router länkar implementeras framöver*/}
                         </Grid>
-                            {cheeekWindowSize!=false? <Link to="/TestOne">TesttOne</Link> :null}
+                            {cheeekWindowSize!==false? <Link className={[classes.navBarMenuColor,classes.linkDecoration].join(' ')} to="/TestOne">TesttOne</Link> :null}
                         <Grid item>
-                            {cheeekWindowSize!=false?  <Link to="/TestTwo">TestTwo</Link> :null}
+                            {cheeekWindowSize!==false?  <Link className={[classes.navBarMenuColor,classes.linkDecoration].join(' ')} to="/TestTwo">TestTwo</Link> :null}
                         </Grid>
                         <Grid item>
-                            {cheeekWindowSize!=false? <Link to="/TestThree">TestThree</Link> :null}
+                            {cheeekWindowSize!==false? <Link className={[classes.navBarMenuColor,classes.linkDecoration].join(' ')} to="/TestThree">TestThree</Link> :null}
                         </Grid>
                         <Grid item>
-                            {cheeekWindowSize!=false? "Favoriter" :null}
+                            {cheeekWindowSize!==false? "Favoriter" :null}
                         </Grid>
                         <Grid item>
 

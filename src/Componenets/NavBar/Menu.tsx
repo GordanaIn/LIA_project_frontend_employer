@@ -4,6 +4,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuIcon from "@material-ui/icons/Menu";
 import {useStyles} from "../Styles/Styles";
+import {Link} from 'react-router-dom'
 
 export default function SimpleMenu() {
     const classes = useStyles();
@@ -20,7 +21,7 @@ export default function SimpleMenu() {
     return (
         <div>
             <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-                <MenuIcon  className={classes.menuColor}/>
+                <MenuIcon  className={classes.navBarMenuColor}/>
     </Button>
     <Menu
     id="simple-menu"
@@ -29,9 +30,9 @@ export default function SimpleMenu() {
     open={Boolean(anchorEl)}
     onClose={handleClose}
     >
-    <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-    <MenuItem onClick={handleClose}>Logout</MenuItem>
+    <MenuItem onClick={handleClose}><Link className={[classes.dropDownMenuColor ,classes.linkDecoration].join(' ')} to="/TestOne">TesttOne</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link className={[classes.dropDownMenuColor,classes.linkDecoration].join(' ')} to="/TestTwo">TestTwo</Link></MenuItem>
+    <MenuItem onClick={handleClose}><Link className={[classes.dropDownMenuColor,classes.linkDecoration].join(' ')} to="/TestThree">TestThree</Link></MenuItem>
         </Menu>
         </div>
 );
