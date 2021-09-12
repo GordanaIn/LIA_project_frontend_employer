@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {AppBar, Grid, Toolbar} from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
-import SimpleMenu from "./Menu";
+import NavMenu from "./NavMenu";
 import {useStyles} from "../Styles/Styles";
 import useWindowSize from "../CheekWindowSize/CheekWindowSize"; //kallar in funtion kollar window storlek
 import {HashRouter as Router, Route, Link, Switch} from 'react-router-dom'
@@ -22,7 +22,7 @@ import {HashRouter as Router, Route, Link, Switch} from 'react-router-dom'
             <AppBar position="static">
                 <Toolbar>
                     <IconButton edge="start" className={classes.navBarMenuButton} color="inherit" aria-label="menu">
-                        {   cheeekWindowSize!== true?<SimpleMenu/>: null}
+                        {   cheeekWindowSize!== true?<NavMenu/>: null}
                     </IconButton>
                     <Grid container
                           direction="row"
@@ -31,17 +31,18 @@ import {HashRouter as Router, Route, Link, Switch} from 'react-router-dom'
                     >
                         {/*döljer text om windowa är bredare än 600*/}
                         <Grid item>
+                            <p>text</p>
                             {/*texten är platshållare för Router länkar implementeras framöver*/}
                         </Grid>
-                            {cheeekWindowSize!==false? <Link className={[classes.navBarMenuColor,classes.linkDecoration].join(' ')} to="/TestOne">TesttOne</Link> :null}
+                            {cheeekWindowSize!==false? <Link className={[classes.navBarMenuColor,classes.linkDecoration].join(' ')} to="/TestOne">Lia Sökar</Link> :null} //ändra "to=" till den önskade path
                         <Grid item>
-                            {cheeekWindowSize!==false?  <Link className={[classes.navBarMenuColor,classes.linkDecoration].join(' ')} to="/TestTwo">TestTwo</Link> :null}
+                            {cheeekWindowSize!==false?  <Link className={[classes.navBarMenuColor,classes.linkDecoration].join(' ')} to="/TestTwo">Skapa Annons</Link> :null}
                         </Grid>
                         <Grid item>
-                            {cheeekWindowSize!==false? <Link className={[classes.navBarMenuColor,classes.linkDecoration].join(' ')} to="/TestThree">TestThree</Link> :null}
+                            {cheeekWindowSize!==false? <Link className={[classes.navBarMenuColor,classes.linkDecoration].join(' ')} to="/TestThree">Favoriter</Link> :null}
                         </Grid>
                         <Grid item>
-                            {cheeekWindowSize!==false? "Favoriter" :null}
+                            {cheeekWindowSize!==false? "Mina Sidor" :null}
                         </Grid>
                         <Grid item>
 
