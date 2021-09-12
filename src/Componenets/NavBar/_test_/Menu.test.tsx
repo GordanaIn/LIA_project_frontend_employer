@@ -12,6 +12,8 @@ it('should cheek link titles',  () =>{
         </BrowserRouter>
     )
 
+    const linkElement = screen.getByRole("heading"); //get by role finns många alternatiev om du kollar inom ""
+
     const linkElementOne = screen.getByText(/Lia Sökar/i);
     const linkElementTwo = screen.getByText(/Skapa Annons/i);
     const linkElementThree = screen.getByText(/Favoriter/i);

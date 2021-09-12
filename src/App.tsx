@@ -13,7 +13,7 @@ function App() {
         <Router>
             <NavBar/>
             <Switch>
-                <Route exact path="/TestOne" component={TestOne}/> //ändra på path och ändra component.
+                <Route exact path="/TestOne" component={TestOne}/> {/*ändra på path och ändra component */}
                 <Route exact path="/TestTwo" component={TestTwo}/>
                 <Route exact path="/TestThree" component={TestThree}/>
             </Switch>
