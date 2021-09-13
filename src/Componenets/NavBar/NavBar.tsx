@@ -18,7 +18,7 @@ import {HashRouter as Router, Route, Link, Switch} from 'react-router-dom'
     })
 
     return (
-        <div className={classes.navBarRoot}>
+        <div className={classes.root}>
             <AppBar position="static">
                 <Toolbar>
                     <IconButton edge="start" className={classes.navBarMenuButton} color="inherit" aria-label="menu">
@@ -34,7 +34,7 @@ import {HashRouter as Router, Route, Link, Switch} from 'react-router-dom'
                             <p>text</p>
                             {/*texten är platshållare för Router länkar implementeras framöver*/}
                         </Grid>
-                            {cheeekWindowSize!==false? <Link className={[classes.navBarMenuColor,classes.linkDecoration].join(' ')} to="/TestOne">Lia Sökar</Link> :null} //ändra "to=" till den önskade path
+                            {cheeekWindowSize!==false? <Link className={[classes.navBarMenuColor,classes.linkDecoration].join(' ')} to="/TestOne">Lia Sökar</Link> :null}
                         <Grid item>
                             {cheeekWindowSize!==false?  <Link className={[classes.navBarMenuColor,classes.linkDecoration].join(' ')} to="/TestTwo">Skapa Annons</Link> :null}
                         </Grid>
