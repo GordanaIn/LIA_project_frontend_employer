@@ -22,29 +22,23 @@ const MinSida: React.FC<MinSidaInterface> = ({
     return (
         <div className={classes.root}>
             <Paper className={classes.paper}>
-                <Grid container spacing={2}>
+                <Grid container direction="column"
+                      justifyContent="center"
+                      alignItems="center" spacing={2}>
                     <h1>Min sida</h1>
 
                     <Grid item xs={12} sm container>
 
                         <img className={classes.img} alt="image"
-                             src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.IhktLJTdu84H9WD4b_AufwHaEr%26pid%3DApi&f=1"/>
+                             src={imageUrl}/>
 
                         <Grid item xs container direction="column" spacing={2}>
                             <Grid item xs>
                                 <div>
-                                    What is Lorem Ipsum?
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                                    unknown printer took a galley of type and scrambled it to make a type specimen book.
-                                    It has survived not only five centuries, but also the leap into electronic
-                                    typesetting, remaining essentially unchanged. It was popularised in the 1960s with
-                                    the release of Letraset sheets containing Lorem Ipsum passages, and more recently
-                                    with desktop publishing software like Aldus PageMaker including versions of Lorem
-                                    Ipsum.
+                                    {companyInfo}
                                 </div>
                                 <Typography variant="body2" gutterBottom>
-                                    Full resolution 1920x1080 • JPEG
+                                    {companyName}
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary">
                                     ID: 1030114

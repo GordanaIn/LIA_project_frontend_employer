@@ -7,21 +7,15 @@ import {HashRouter as Router, Route, Link, Switch} from 'react-router-dom'
 import {TestTwo} from "./Componenets/MocktComponenet/TestTwo";
 import TestThree from "./Componenets/MocktComponenet/TestThree";
 import MinSida from "./Componenets/MinaSidor/MinSida";
+import {LoremIpsum, UrlPlaceholderMidaSidor} from "./Componenets/MocktComponenet/MockInfoPlaceHolders";
 
-/*
-imageUrl:string,
-    companyInfo:string,
-    companyName:string,
-    email:string,
-    password:string,
-    userName:string
-*/
+
 
 function App() {
     return (
         <Router>
             <NavBar/>
-            <MinSida imageUrl={} companyInfo={} companyName={} email={} password={} userName={} />
+            <MinSida imageUrl={UrlPlaceholderMidaSidor} companyInfo={LoremIpsum} companyName="Lialiser co" email="mockEmail@email" userName="Kalle MOnter" password="jlksa465"  />
             <Switch>
                 <Route exact path="/TestOne" component={TestOne}/>
                 <Route exact path="/TestTwo" component={TestTwo}/>
