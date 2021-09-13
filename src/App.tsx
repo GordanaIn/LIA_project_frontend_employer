@@ -10,6 +10,7 @@ import MinSida from "./Componenets/MinaSidor/MinSida";
 import {LoremIpsum, UrlPlaceholderMidaSidor} from "./Componenets/MocktComponenet/MockInfoPlaceHolders";
 
 //testin go diffrent branch
+//just want this to work
 
 function App() {
     return (
