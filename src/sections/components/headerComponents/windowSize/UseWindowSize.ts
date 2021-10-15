@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react'
-import {WindowSize} from "../Interface/HandleInterface"; //importerar Intercface
+import {WindowSize} from "../../../interfaces/HandleInterface"; //importerar Intercface
+
 
 function useWindowSize(): WindowSize {
     //setter en default/utgångvärde för window size
@@ -7,7 +8,6 @@ function useWindowSize(): WindowSize {
         width: 0,
         height: 0,
     })
-
     useEffect(() => {
         //function som sätter värde på windowSize
         const handler = () => {
@@ -16,7 +16,6 @@ function useWindowSize(): WindowSize {
                 height: window.innerHeight,
             })
         }
-
         //functionen repeteras för att uppdatera/refresh windowSize värden
         handler()
         window.addEventListener('resize', handler)
@@ -24,8 +23,6 @@ function useWindowSize(): WindowSize {
             window.removeEventListener('resize', handler)
         }
     }, [])
-
-    return windowSize 
+    return windowSize
 }
-
-export default useWindowSize
+export default useWindowSize;

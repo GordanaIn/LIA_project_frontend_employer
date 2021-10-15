@@ -1,15 +1,12 @@
-//interface som sätter värde typer av nummer fär Window sise
 export interface WindowSize {
     width: number
     height: number
 }
-
-export interface MinSidaInterface {
+export interface profileInterface {
     imageUrl:string,
     companyInfo:string,
     companyName:string,
     email:string,
     userName:string
     password:string,
-
 }
