@@ -11,7 +11,7 @@ import {Menu} from "@material-ui/core";
 import {Link} from "react-router-dom";
 import HomeIcon from '@material-ui/icons/Home';
 
-import theme from "../../../../Theme";
+import theme from "../../../../../Theme";
 import {ThemeProvider} from "@mui/material";
 import {useStyles} from "./stylesNav/NavStyle";
 

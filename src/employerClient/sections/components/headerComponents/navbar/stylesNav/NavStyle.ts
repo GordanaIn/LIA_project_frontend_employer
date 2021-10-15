@@ -40,6 +40,7 @@ export const useStyles = makeStyles((theme: Theme) =>
                 marginTop: -193,
                 alignItems:"center",
 
+
             },
             linkDecoration: {
                 textDecoration: 'none',
@@ -72,7 +73,7 @@ export const useStyles = makeStyles((theme: Theme) =>
                 alignItems:"center",
                 fontSize:25,
                 marginTop: 50,
-                marginRight:-49
+                marginRight:-59
             },
             sidenav: {
                 background: "#011627",
@@ -90,6 +91,7 @@ export const useStyles = makeStyles((theme: Theme) =>
                 width: 260,
                 height:190,
                 marginLeft:-26,
+
 
             },
             logo1: {

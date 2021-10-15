@@ -2,7 +2,7 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import React from "react";
 import {ThemeProvider} from "@mui/material";
-import theme from "../../../Theme";
+import theme from "../../../../Theme";
 import FooterPhoto from "./logan/FooterPhoto";
 import {useStyles} from "./navbar/stylesNav/NavStyle";
 

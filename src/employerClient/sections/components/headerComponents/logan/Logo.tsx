@@ -1,5 +1,5 @@
 import React, {FC} from "react";
-import LoganNew from "./foto/LoganNew.png";
+import LoganNew from "./foto/loganNew.png";
 import {useStyles} from "../navbar/stylesNav/NavStyle";
 
 const Logo: FC<{}> = () =>{

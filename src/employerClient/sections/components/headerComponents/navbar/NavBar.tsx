@@ -8,7 +8,7 @@ import Menu from "./NavMenu";
 import useWindowSize from "../windowSize/UseWindowSize";
 import {useStyles} from "./stylesNav/NavStyle";
 import {Link} from "react-router-dom";
-import theme from "./../../../../Theme";
+import theme from "../../../../../Theme";
 
 import Logo from "../logan/Logo";
 import Grid from '@material-ui/core/Grid';

@@ -3,7 +3,7 @@ import {Paper} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import {useStyles} from "../components/landingStyle/LandingStyle";
 import {ThemeProvider} from "@mui/material";
-import theme from "../../Theme";
+import theme from "../../../Theme";
 
 
 
