@@ -36,6 +36,19 @@ export const useStyles = makeStyles((theme:Theme) =>
                 justifyContent: 'center',
                 width:400,
                 height:500
+            },
+            titel:{
+                alignItems: 'center',
+                textAlign: 'center',
+                color: 'black'
+            },
+            paper2:{
+                background: 'transparent',
+                color: 'white',
+                paddingBottom: '5%',
+                paddingLeft: '5%',
+                paddingRight: '5%',
+                textAlign: 'center'
             }
 
         }),
