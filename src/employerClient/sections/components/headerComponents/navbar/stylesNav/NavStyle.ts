@@ -71,7 +71,7 @@ export const useStyles = makeStyles((theme: Theme) =>
             grid: {
                 justify:"center",
                 alignItems:"center",
-                fontSize:25,
+                fontSize:20,
                 marginTop: 50,
                 marginRight:-59
             },
@@ -95,9 +95,9 @@ export const useStyles = makeStyles((theme: Theme) =>
 
             },
             logo1: {
-                width: 260,
-                height:190,
-                marginLeft:5
+                width: 220,
+                height:140,
+                marginLeft:20
 
 
             },

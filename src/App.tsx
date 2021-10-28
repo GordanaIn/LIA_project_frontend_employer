@@ -19,7 +19,7 @@ import Favorite from "./employerClient/sections/pages/Favorite";
 function App() {
     return (
         <Router>
-            <NavBar/>
+            <NavBar />
             <Switch>
                 <Route exact path="/home" component={LandingPage}/>
                 <Route exact path="/addInternship" component={AddInternship}/>
