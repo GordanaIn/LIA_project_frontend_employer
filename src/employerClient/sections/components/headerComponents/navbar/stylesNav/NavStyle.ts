@@ -71,7 +71,7 @@ export const useStyles = makeStyles((theme: Theme) =>
             grid: {
                 justify:"center",
                 alignItems:"center",
-                fontSize:20,
+                fontSize:18,
                 marginTop: 50,
                 marginRight:-59
             },

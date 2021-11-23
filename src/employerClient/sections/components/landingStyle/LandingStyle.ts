@@ -18,18 +18,22 @@ export const useStyles = makeStyles((theme:Theme) =>
 
             },
             p:{
-                justify:"center",
+                justifyContent: 'center',
                 alignItems:"center",
                 textAlign:'center',
                 marginLeft:10,
 
             },
             h3:{
-                justify:"center",
+                justifyContent: 'center',
                 alignItems:"center",
                 marginTop:40,
 
 
+            },
+            div:{
+                justifyContent: 'center',
+                alignItems:"center",
             },
             paper:{
                 alignItems: 'center',
@@ -38,11 +42,14 @@ export const useStyles = makeStyles((theme:Theme) =>
                 height:500
             },
             titel:{
+                justifyContent: 'center',
                 alignItems: 'center',
                 textAlign: 'center',
                 color: 'black'
             },
             paper2:{
+                justifyContent: 'center',
+                alignItems:"center",
                 background: 'transparent',
                 color: 'white',
                 paddingBottom: '5%',

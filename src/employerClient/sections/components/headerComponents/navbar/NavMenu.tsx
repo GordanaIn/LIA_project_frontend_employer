@@ -10,7 +10,7 @@ import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import {Menu} from "@material-ui/core";
 import {Link} from "react-router-dom";
 import HomeIcon from '@material-ui/icons/Home';
-
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import theme from "../../../../../Theme";
 import {ThemeProvider} from "@mui/material";
 import {useStyles} from "./stylesNav/NavStyle";
@@ -41,8 +41,8 @@ export default function NavMenu() {
                       onClose={handleClose}>
                     <MenuItem onClick={handleClose}><Link className={[classes.navBarMenuColor, classes.linkDecoration].join('')} style={{ textDecoration: 'none', color: 'inherit' }} to="/home"><HomeIcon
                         style={{color: "#C1C4C8", marginRight: 6}}/>Home</Link></MenuItem>
-                      <MenuItem onClick={handleClose}><Link className={[classes.navBarMenuColor, classes.linkDecoration].join('')} style={{ textDecoration: 'none', color: 'inherit' }} to="/addInternship"><HomeIcon
-                        style={{color: "#C1C4C8", marginRight: 6}}/>Home</Link></MenuItem>
+                      <MenuItem onClick={handleClose}><Link className={[classes.navBarMenuColor, classes.linkDecoration].join('')} style={{ textDecoration: 'none', color: 'inherit' }} to="/addInternship"><AddCircleOutlineIcon
+                        style={{color: "#C1C4C8", marginRight: 6}}/>Add Internship</Link></MenuItem>
                     <MenuItem onClick={handleClose}><Link className={[classes.navBarMenuColor, classes.linkDecoration].join('')} style={{ textDecoration: 'none', color: 'inherit' }} to="/search"><SearchIcon
                         style={{color: "#C1C4C8", marginRight: 6}}/>Internships</Link></MenuItem>
                     <MenuItem onClick={handleClose}><Link className={[classes.navBarMenuColor, classes.linkDecoration].join('')} style={{ textDecoration: 'none', color: 'inherit' }} to="/profile"><PersonIcon

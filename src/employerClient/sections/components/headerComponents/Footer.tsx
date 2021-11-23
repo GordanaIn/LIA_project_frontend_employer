@@ -14,9 +14,6 @@ const Footer = () =>{
         <ThemeProvider theme={theme}>
             <AppBar position="sticky" color="primary" style={{alignItems:"center",top:0, height:80}} sx={{ top: 'auto', bottom: 0 }}>
                 <p style={{alignItems:"center"}}>Production LiaLisera</p>
-                <div className={classes.div3}>
-                    <FooterPhoto/>
-                </div>
                 <Toolbar style={{alignItems:"center"}}>
 
             </Toolbar>

@@ -48,6 +48,10 @@ const NavBar: FC<{}>= (show) =>{
                         </Grid>
                         <Grid item className={classes.grid}>
                             {checkWindowSize !== false ?
+                                <Link className={classes.linkDecoration} to="/profile" > Profile </Link> :null}
+                        </Grid>
+                        <Grid item className={classes.grid}>
+                            {checkWindowSize !== false ?
                                 <Link className={classes.linkDecoration} to="/favorite" > Favorite </Link> :null}
                         </Grid>
                         <Grid item className={classes.grid}>
