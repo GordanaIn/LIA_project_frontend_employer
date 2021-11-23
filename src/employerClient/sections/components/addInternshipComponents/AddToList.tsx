@@ -7,9 +7,7 @@ import ApiEmployerClient from "../../api/ApiEmployerClient";
 
 
 
-
-const AddToList:FC<> = () => {
-
+const AddToList: React.FC<{}> = () => {
     const [navigation, setNavigation] = useState("landingPage");
     const classes = useStyles();
     const [internships, setInternships] = useState();
@@ -17,7 +15,7 @@ const AddToList:FC<> = () => {
     useEffect(() => {
         setLoading(false);
     },[]);
-    let {title, description}=internship;
+    //let {title, description}=internship;
 
     useEffect(() => {
         ApiEmployerClient.getInternships().then(setInternships).catch(err=>console.log(err));

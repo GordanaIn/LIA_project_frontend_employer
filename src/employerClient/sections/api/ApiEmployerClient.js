@@ -1,27 +1,14 @@
 
 const ApiEmployerClient = {
-    fetchPerson:async ()=>{
-        return await(await fetch('http://localhost:8081/persons')).json();
-    },
-    addAddress: async (address) => {
-        const res = await fetch('http://localhost:8081/address/create', {
+
+    saveInternship:async (internship)=>{
+        return  await (await fetch('http://localhost:8081/api/student/', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
             },
-            body: JSON.stringify(address),
-        })
-        const data = await res.json()
-    },
-    addUser: async (user) => {
-        const res = await fetch('http://localhost:8081/users/create', {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json',
-            },
-            body: JSON.stringify(user),
-        })
-        //const data = await res.json()
+            body: JSON.stringify(internship)
+        })).json()
     },
     fetchStudents:async ()=>{
         return await(await fetch('http://localhost:8081/employers')).json();
