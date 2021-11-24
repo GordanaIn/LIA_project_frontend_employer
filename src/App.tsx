@@ -8,11 +8,12 @@ import {HashRouter as Router, Route,  Switch} from 'react-router-dom'
 import Footer from "./employerClient/sections/components/headerComponents/Footer";
 import NavBar from './employerClient/sections/components/headerComponents/navbar/NavBar';
 import LandingPage from "./employerClient/sections/pages/LandingPage";
-import AddInternship from "./employerClient/sections/components/internshipComponents/AddInternship";
+
 import SearchPage from "./employerClient/sections/pages/SearchPage";
 import Support from "./employerClient/sections/pages/Support";
 import Profile from "./employerClient/sections/pages/Profile";
 import Favorite from "./employerClient/sections/pages/Favorite";
+import AddInternship from "./employerClient/sections/pages/AddInternship";
 
 
 
@@ -22,6 +23,7 @@ function App() {
             <NavBar />
             <Switch>
                 <Route exact path="/home" component={LandingPage}/>
+
                 <Route path="/addInternship" exact={true} component={AddInternship}/>
                 <Route exact path="/search" component={SearchPage}/>
                 <Route exact path="/profile" component={Profile}/>

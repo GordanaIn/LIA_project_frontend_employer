@@ -2,7 +2,7 @@
 const ApiEmployerClient = {
 
     saveInternship:async (internship)=>{
-        return  await (await fetch('http://localhost:8081/api/student/', {
+        return  await (await fetch('http://localhost:8081/api/internship/', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
