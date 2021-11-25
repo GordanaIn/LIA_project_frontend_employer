@@ -55,6 +55,7 @@
     ]
   },
   "devDependencies": {
+    "@mui/x-data-grid-pro": "^5.0.1",
     "@types/react-router-dom": "^5.1.8",
     "@types/styled-components": "^5.1.14",
     "formik": "^2.2.9",

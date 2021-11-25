@@ -40,19 +40,29 @@ export default function NavMenu() {
                       anchorEl={anchorEl}
                       onClose={handleClose}>
                     <MenuItem onClick={handleClose}><Link className={[classes.navBarMenuColor, classes.linkDecoration].join('')} style={{ textDecoration: 'none', color: 'inherit' }} to="/home"><HomeIcon
-                        style={{color: "#C1C4C8", marginRight: 6}}/>Home</Link></MenuItem>
+                        style={{color: "#C1C4C8", marginRight: 6}}/>Home</Link>
+                    </MenuItem>
                       <MenuItem onClick={handleClose}><Link className={[classes.navBarMenuColor, classes.linkDecoration].join('')} style={{ textDecoration: 'none', color: 'inherit' }} to="/addInternship"><AddCircleOutlineIcon
-                        style={{color: "#C1C4C8", marginRight: 6}}/>Add Internship</Link></MenuItem>
+                        style={{color: "#C1C4C8", marginRight: 6}}/>Add Internship</Link>
+                      </MenuItem>
+                    <MenuItem onClick={handleClose}><Link className={[classes.navBarMenuColor, classes.linkDecoration].join('')} style={{ textDecoration: 'none', color: 'inherit' }} to="/listOfInternship"><AddCircleOutlineIcon
+                        style={{color: "#C1C4C8", marginRight: 6}}/>Adverts List of Internsips</Link>
+                    </MenuItem>
                     <MenuItem onClick={handleClose}><Link className={[classes.navBarMenuColor, classes.linkDecoration].join('')} style={{ textDecoration: 'none', color: 'inherit' }} to="/search"><SearchIcon
-                        style={{color: "#C1C4C8", marginRight: 6}}/>Internships</Link></MenuItem>
+                        style={{color: "#C1C4C8", marginRight: 6}}/>Internships</Link>
+                    </MenuItem>
                     <MenuItem onClick={handleClose}><Link className={[classes.navBarMenuColor, classes.linkDecoration].join('')} style={{ textDecoration: 'none', color: 'inherit' }} to="/profile"><PersonIcon
-                        style={{color: "#C1C4C8", marginRight: 6}}/>Profile</Link></MenuItem>
+                        style={{color: "#C1C4C8", marginRight: 6}}/>Profile</Link>
+                    </MenuItem>
                     <MenuItem onClick={handleClose}><Link className={[classes.navBarMenuColor, classes.linkDecoration].join('')} style={{ textDecoration: 'none', color: 'inherit' }} to="/favorite"> <FavoriteIcon
-                        style={{color: "#C1C4C8", marginRight: 6}}/> Favorite</Link> </MenuItem>
+                        style={{color: "#C1C4C8", marginRight: 6}}/> Favorite</Link>
+                    </MenuItem>
                     <MenuItem onClick={handleClose}><Link className={[classes.navBarMenuColor, classes.linkDecoration].join('')} style={{ textDecoration: 'none', color: 'inherit' }} to="/support"><SupportAgentIcon
-                        style={{color: "#C1C4C8", marginRight: 6}}/>Support</Link></MenuItem>
+                        style={{color: "#C1C4C8", marginRight: 6}}/>Support</Link>
+                    </MenuItem>
                     <MenuItem onClick={handleClose}><Link className={[classes.navBarMenuColor, classes.linkDecoration].join('')} style={{ textDecoration: 'none', color: 'inherit' }} to="/logout"><ExitToAppIcon
-                            style={{color: "#C1C4C8", marginRight: 6}}/>Logout</Link></MenuItem>
+                            style={{color: "#C1C4C8", marginRight: 6}}/>Logout</Link>
+                    </MenuItem>
 
                 </Menu>
             </div>

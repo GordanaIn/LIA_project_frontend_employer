@@ -1,5 +1,5 @@
 import React, {FC, ReactElement, useEffect, useState} from "react";
-import {useStyles} from "./sections/components/landingStyle/LandingStyle";
+import {useStyles} from "./sections/components/styles/LandingStyle";
 
 
 

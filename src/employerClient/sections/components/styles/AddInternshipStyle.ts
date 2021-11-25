@@ -1,6 +1,7 @@
 import { Theme} from "@mui/material/styles";
 
 import {makeStyles,createStyles} from "@material-ui/core/styles";
+import {styled, TableCell, tableCellClasses, TableRow} from "@mui/material";
 
 export const useStyles = makeStyles((theme:Theme) =>
         createStyles({
@@ -10,8 +11,26 @@ export const useStyles = makeStyles((theme:Theme) =>
                 justifyContent: 'center',
                 background: 'white',
                 '& > *': {
-                    margin: theme.spacing(8),
+                    margin: theme.spacing(1),
                 },
+            },
+            container:{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop:40
+            },
+            tableBody:{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop:100
+            },
+            tabel:{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#ffffff',
+                backgroundColor:'#4C525C',
+                marginRight: theme.spacing(1),
             },
             h3:{
                 alignItems: 'center',
@@ -33,7 +52,13 @@ export const useStyles = makeStyles((theme:Theme) =>
             paper:{
                 alignItems: 'center',
                 justifyContent: 'center',
-                width:400,
+                width:900,
+                height:750,
+            },
+            paperList:{
+                alignItems: 'center',
+                justifyContent: 'center',
+                width:1100,
                 height:750,
             },
             username:{
@@ -79,6 +104,32 @@ export const useStyles = makeStyles((theme:Theme) =>
                 marginTop: 30,
                 marginLeft:142,
             },
+            btn1:{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: 30,
+                marginLeft:142,
+                color:"#2165A4"
+            },
+            tablecall:{
+                [`&.${tableCellClasses.head}`]: {
+                    backgroundColor: '#4C525C',
+                    color:"white",
+                },
+                [`&.${tableCellClasses.body}`]: {
+                    fontSize: 14,
+                },
+            },
+            tableRow:{
+                '&:nth-of-type(odd)': {
+                    backgroundColor: theme.palette.action.hover,
+                },
+                // hide last border
+                '&:last-child td, &:last-child th': {
+                    border: 0,
+                },
+            }
         }),
     )
 ;
+

@@ -1,6 +1,6 @@
 import { Paper } from "@mui/material";
 import React, {FC, ReactElement, useEffect, useState} from "react";
-import { useStyles } from "../components/landingStyle/LandingStyle";
+import { useStyles } from "../components/styles/LandingStyle";
 
 
 

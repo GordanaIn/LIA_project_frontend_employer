@@ -8,7 +8,7 @@ export const useStyles = makeStyles((theme: Theme) =>
                 flexGrow: 1,
             },
             navBarMenuButton: {
-                marginRight: theme.spacing(1),
+                marginRight: theme.spacing(3),
             },
             navBarTitle: {
                 flexGrow: 1,
@@ -30,7 +30,7 @@ export const useStyles = makeStyles((theme: Theme) =>
             },
             navBarMenu: {
                 color: '#fafafa',
-                marginLeft: theme.spacing(10),
+                marginLeft: theme.spacing(3),
                 marginTop:20,
 
             },
@@ -45,22 +45,21 @@ export const useStyles = makeStyles((theme: Theme) =>
             linkDecoration: {
                 textDecoration: 'none',
                 color:"#fff",
-                marginRight: theme.spacing(10),
-               marginTop: 20
+                marginRight: theme.spacing(3),
+                marginTop: 20
             },
             dropDownMenuColor: {
                 color: '#ffffff',
                 backgroundColor:'#2165A4',
-                marginRight: theme.spacing(2),
+                marginRight: theme.spacing(3),
             },
             paper: {
-                padding: theme.spacing(2),
                 margin: 'auto',
                 maxWidth: 500,
             },
             image: {
-                width: 128,
-                height: 128,
+                width: 118,
+                height: 118,
             },
             img: {
                 margin: 'auto',
@@ -71,9 +70,7 @@ export const useStyles = makeStyles((theme: Theme) =>
             grid: {
                 justify:"center",
                 alignItems:"center",
-                fontSize:18,
-                marginTop: 50,
-                marginRight:-59
+
             },
             sidenav: {
                 background: "#011627",

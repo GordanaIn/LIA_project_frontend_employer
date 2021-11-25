@@ -1,12 +1,15 @@
-import React, {useState} from "react";
+import React, {FC, useState} from "react";
 import {ThemeProvider} from "@material-ui/core/styles";
-import {Paper, TextField} from "@mui/material";
-import {useStyles} from "../components/internshipComponents/AddInternshipStyle";
+import {Button, Grid, Paper, TextField} from "@mui/material";
+import {useStyles} from "../components/styles/AddInternshipStyle";
 import ApiEmployerClient from "../api/ApiEmployerClient";
 import RegisterButton from "../../button/RegisterButton";
 import theme from "../../Theme";
+import ListOfInternships from "../components/internshipComponents/ListOfInternships";
+import {InternshipVacancy} from "../interfaces/NewHandleInterface";
+import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 
-const AddInternship: React.FC<{}> = () => {
+const AddInternship: FC<{internship: InternshipVacancy}> = ({internship}) => {
     const classes = useStyles();
     const [userId, SetUserId] = useState('c7bead53-3499-405e-86f5-13e7b953fdd3');
     const [employerName, setEmployerName] = useState("");
@@ -43,7 +46,8 @@ const AddInternship: React.FC<{}> = () => {
     }
     return (
         <ThemeProvider theme={theme}>
-            <div className={classes.root}>
+        <Grid className={classes.root}>
+
                 <Paper elevation={3} className={classes.paper}>
                     <form   onSubmit={e => onSubmit(e)}>
                         <h3 className={classes.h3}> Add Internship</h3>
@@ -57,8 +61,16 @@ const AddInternship: React.FC<{}> = () => {
                                            onChange={e => setTitle(e.target.value)}/>
                             </div>
                             <div className={classes.username} >
-                                <TextField  type={"text"} id="standard-basic" label=" Job Description" variant="standard"   value={description}
-                                           onChange={e => setDescription(e.target.value)}/>
+                                <TextField
+                                    focused
+                                    style={{marginLeft:'1%',textUnderlinePosition:'center', paddingLeft:20, paddingRight:20}}
+                                    helperText="Job Description"
+                                    multiline
+                                    type={"text"}
+                                    rows={4}
+                                    value={description}
+                                    onChange={e => setDescription(e.target.value)}
+                                />
                             </div>
                             <div className={classes.username} >
                                 <TextField  type={"date"} id="standard-basic"  variant="standard"   value={datePosted}
@@ -84,7 +96,15 @@ const AddInternship: React.FC<{}> = () => {
                         </div>
                     </form>
                 </Paper>
-            </div>
+            <React.Fragment>
+                <Button href={"/#/listOfInternship"} variant="contained"  className={classes.btn1}>
+                    Go to List of Adverts<DoubleArrowIcon style={{color:"white"}}/>
+                </Button>
+            </React.Fragment>
+                {/*<Paper  elevation={3} className={classes.paperList}>
+                    <ListOfInternships internship={internship}/>
+                </Paper>*/}
+            </Grid>
         </ThemeProvider>
     );
 }

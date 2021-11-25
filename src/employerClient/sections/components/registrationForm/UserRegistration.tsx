@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import {useStyles} from "./RegistrationFormStyle/RegistrationStyle";
+import {useStyles} from "../styles/RegistrationStyle";
 import {Grid, Paper} from "@material-ui/core";
 
 import UserService from '../../api/UserService';

@@ -14,6 +14,7 @@ import Support from "./employerClient/sections/pages/Support";
 import Profile from "./employerClient/sections/pages/Profile";
 import Favorite from "./employerClient/sections/pages/Favorite";
 import AddInternship from "./employerClient/sections/pages/AddInternship";
+import ListOfInternships from "./employerClient/sections/components/internshipComponents/ListOfInternships";
 
 
 
@@ -23,12 +24,12 @@ function App() {
             <NavBar />
             <Switch>
                 <Route exact path="/home" component={LandingPage}/>
-
                 <Route path="/addInternship" exact={true} component={AddInternship}/>
                 <Route exact path="/search" component={SearchPage}/>
                 <Route exact path="/profile" component={Profile}/>
                 <Route exact path="/favorite" component={Favorite}/>
                 <Route exact path="/support" component={Support}/>
+                <Route path="/listOfInternship"  exact={true} component={ListOfInternships}/>
             </Switch>
             <Footer/>
         </Router>

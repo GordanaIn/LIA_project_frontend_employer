@@ -44,6 +44,10 @@ const NavBar: FC<{}>= (show) =>{
                         </Grid>
                         <Grid item className={classes.grid}>
                             {checkWindowSize !== false ?
+                                <Link className={classes.linkDecoration} to="/listOfInternship" > Adverts List of Internsips</Link> :null}
+                        </Grid>
+                        <Grid item className={classes.grid}>
+                            {checkWindowSize !== false ?
                                 <Link className={classes.linkDecoration} to="/search" > Search School or Student </Link> :null}
                         </Grid>
                         <Grid item className={classes.grid}>
