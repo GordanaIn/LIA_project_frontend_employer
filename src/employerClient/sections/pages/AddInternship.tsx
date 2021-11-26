@@ -11,13 +11,14 @@ import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 
 const AddInternship: FC<{internship: InternshipVacancy}> = ({internship}) => {
     const classes = useStyles();
-    const [userId, SetUserId] = useState('99006ce5-8c99-48e6-b8e9-d10115238c6b');
+    const [userId, SetUserId] = useState('48f8f3c8-3649-4638-853b-07e58318a40e');
     const [employerName, setEmployerName] = useState("");
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [datePosted, setDatePosted] = useState("");
     const [contactPhone, setContactPhone] = useState("");
     const [duration, setDuration] = useState("");
+    const [requiredNumber, setRequiredNumber] = useState("");
 
 
     const onSubmit = (e : React.FormEvent<HTMLFormElement>) => {
@@ -28,7 +29,8 @@ const AddInternship: FC<{internship: InternshipVacancy}> = ({internship}) => {
             description: description,
             datePosted: datePosted,
             contactPhone:contactPhone,
-            duration:duration
+            duration:duration,
+            requiredNumber:requiredNumber
         };
         console.log(internshipVacancy)
         ApiEmployerClient.saveInternship(internshipVacancy).then(res=>alert("Registration is successful")).catch(err=>console.log(err));
@@ -43,6 +45,7 @@ const AddInternship: FC<{internship: InternshipVacancy}> = ({internship}) => {
         setDatePosted(" ");
         setContactPhone(" ");
         setDuration(" ");
+        setRequiredNumber(" ");
     }
     return (
         <ThemeProvider theme={theme}>
@@ -85,6 +88,10 @@ const AddInternship: FC<{internship: InternshipVacancy}> = ({internship}) => {
                             <div className={classes.password}>
                                 <TextField id="standard-basic"  label="duration" variant="standard" value={duration}
                                            onChange={e => setDuration(e.target.value)}/>
+                            </div>
+                            <div className={classes.password}>
+                                <TextField id="standard-basic"  label="Number of vacant places" variant="standard" value={requiredNumber}
+                                           onChange={e => setRequiredNumber(e.target.value)}/>
                             </div>
                             <div>
                                 <div className={classes.btn}>
