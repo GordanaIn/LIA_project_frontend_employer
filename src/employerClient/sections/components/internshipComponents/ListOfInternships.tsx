@@ -2,6 +2,8 @@ import React, {FC, useEffect, useState} from "react";
 import {useStyles} from "../styles/AddInternshipStyle";
 import ApiEmployerClient from "../../api/ApiEmployerClient";
 import theme from "../../../Theme";
+import DeleteIcon from "@material-ui/icons/Delete";
+import EditIcon from "@material-ui/icons/Edit";
 import {
     Paper,
     Table,
@@ -13,7 +15,8 @@ import {
     TableRow,
     ThemeProvider
 } from '@mui/material';
-import Button from "mui-button";
+import {InternshipVacancy} from "../../../interfaces/HandleInterface";
+
 
 
 interface Column {
@@ -55,9 +58,11 @@ const columns: Column[] = [
         align: 'center',
         format: (value: number) => value.toFixed(2),
     },
+
 ];
 
 const ListOfInternships: FC<{}> = ({}) => {
+    //Array<InternshipVacancy>
     const classes = useStyles();
     const [internships, setInternships] = useState([]);
     const [page, setPage] = React.useState(0);
@@ -71,13 +76,14 @@ const ListOfInternships: FC<{}> = ({}) => {
         setPage(0);
     };
 
-    const remove = (internships: any) => {
-        ApiEmployerClient.deleteInternship(`9ea434ab-34fc-45e4-8803-e8fcacf9efd3`, internships?.id)
+    const remove = (internships: InternshipVacancy | any ) => {
+        console.log(internships?.id)
+        ApiEmployerClient.deleteInternship(`6614f9d2-6e5a-49ba-a8bf-fb45a3db4053`, internships?.id)
             .then(response => console.log(response))
-            .catch((err: any) => console.log(err));
+            .catch((err) => console.log(err));
     }
-    const edit = (internships: any) => {
-        ApiEmployerClient.editInternship(`9ea434ab-34fc-45e4-8803-e8fcacf9efd3`, internships?.id)
+    const edit = (internships: InternshipVacancy | any) => {
+        ApiEmployerClient.editInternship(`6614f9d2-6e5a-49ba-a8bf-fb45a3db4053`, internships?.id)
             .then(response => console.log(response))
             .catch((err: any) => console.log(err));
     }
@@ -117,9 +123,9 @@ const ListOfInternships: FC<{}> = ({}) => {
                             </TableRow>
                         </TableHead>
                         <TableBody className={classes.tableBody}>
-                            {internships
+                            { internships
                                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                                .map((row) => {
+                                .map((row:any) => {
                                     return (
                                         <TableRow hover role="checkbox" tabIndex={-1} /*key={row.companyName}*/ >
                                             {columns.map((column) => {
@@ -133,10 +139,8 @@ const ListOfInternships: FC<{}> = ({}) => {
                                                     </TableCell>
                                                 );
                                             })}
-
-                                            <Button onClick={() => edit(internships)}>Edit</Button>
-                                            <Button onClick={() => remove(internships)}>Remove</Button>
-
+                                            <EditIcon onClick={() => edit(internships)}/>
+                                            <DeleteIcon onClick={() => remove(internships)}/>
                                         </TableRow>
                                     );
                                 })}

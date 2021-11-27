@@ -70,7 +70,10 @@ export interface InternshipVacancy{
     title:string;
     description:string;
     status:string;
-    datePosted:string;
+    datePosted:any;
     contactPhone:string;
     duration:string;
+    requiredNumber:number;
+    orgNumber:string;
+
 }

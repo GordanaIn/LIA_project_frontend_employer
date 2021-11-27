@@ -17,9 +17,9 @@ const ApiEmployerClient = {
     },
 
     deleteInternship:async (employerId, internshipId)=>{
-        return  await fetch(`http://localhost:8081/api/internship/deleteInternship/${employerId}/${internshipId}`, {
+       return  await fetch(`http://localhost:8081/api/internship/deleteInternship/${employerId}/${internshipId}`, {
             method: 'DELETE',
-        }).then(res=>res.json())
+        }).then(res=>{console.log();res.json() })
     },
 
     editInternship:async (employerId, internshipId)=>{
