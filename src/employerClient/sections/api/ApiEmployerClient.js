@@ -1,6 +1,11 @@
 
 const ApiEmployerClient = {
 
+    getInternships:() => {
+        return fetch("http://localhost:8081/api/internship")
+            .then(resp => resp.json());
+    },
+
     saveInternship:async (internship)=>{
         return  await (await fetch('http://localhost:8081/api/internship/', {
             method: 'POST',
@@ -10,33 +15,24 @@ const ApiEmployerClient = {
             body: JSON.stringify(internship)
         })).json()
     },
-    fetchStudents:async ()=>{
-        return await(await fetch('http://localhost:8081/employers')).json();
+
+    deleteInternship:async (employerId, internshipId)=>{
+        return  await fetch(`http://localhost:8081/api/internship/deleteInternship/${employerId}/${internshipId}`, {
+            method: 'DELETE',
+        }).then(res=>res.json())
     },
-    fetchEmployer:async (employerId)=>{
-        return await(await fetch(`http://localhost:8081/employer/${employerId}`)).json();
+
+    editInternship:async (employerId, internshipId)=>{
+        return  await fetch(`http://localhost:8081/api/internship/addFavorite/${employerId}/${internshipId}`, {
+            method: 'PUT',
+        }).then(res=>res.json())
     },
-    getEmployers:()=>{
-        return fetch(`http://localhost:8081/api/employer`,{
-            method: 'GET',
-        }).then(res=>res.json());
-    },
-    getEmployer:(employerId)=>{
-        return fetch(`http://localhost:8081/api/employer/${employerId}`).then(res=>res.json());
-    },
-    getAEmployer:(employerId)=>{
-        return (employerId != null) ?
-            fetch( `http://localhost:8081/employers/${employerId}`)
-                .then(resp => resp.json()).catch(err=>console.log(err))
-            : "Student not found";
-    },
-    searchStudents:(status)=>{
-        return fetch( `http://localhost:8081/stud/search/${status}`)
-            .then(resp => resp.json());
-    },
-    getInternships:() => {
-        return fetch("http://localhost:8081/api/internship")
-            .then(resp => resp.json());
+
+    getEmployerByUser:(employerId)=>{
+        return fetch(`http://localhost:8081/api/employer/${employerId}`, {
+            method: "GET",
+            headers: { "Content-Type": "application/json" }
+        }).then(response => response.json());
     },
 
     updateEmployer: async (employerId,employer) => {
@@ -47,12 +43,6 @@ const ApiEmployerClient = {
             },
             body: JSON.stringify(employer),
         })
-    },
-    getEmployerByUser:(employerId)=>{
-        return fetch(`http://localhost:8081/api/employer/${employerId}`, {
-            method: "GET",
-            headers: { "Content-Type": "application/json" }
-        }).then(response => response.json());
     },
 }
 

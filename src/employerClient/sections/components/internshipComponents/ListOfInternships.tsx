@@ -2,11 +2,22 @@ import React, {FC, useEffect, useState} from "react";
 import {useStyles} from "../styles/AddInternshipStyle";
 import ApiEmployerClient from "../../api/ApiEmployerClient";
 import theme from "../../../Theme";
-import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination ,TableRow, ThemeProvider} from '@mui/material';
+import {
+    Paper,
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TablePagination,
+    TableRow,
+    ThemeProvider
+} from '@mui/material';
+import Button from "mui-button";
 
 
 interface Column {
-    id: 'logo' | 'companyName' |'title' | 'description' | 'datePosted'|'contactPhone'  ;
+    id: 'logo' | 'companyName' | 'title' | 'description' | 'datePosted' | 'contactPhone';
     label: string;
     minWidth?: number;
     align?: 'center';
@@ -14,8 +25,8 @@ interface Column {
 }
 
 const columns: Column[] = [
-    { id: 'logo', label: 'Logo', minWidth: 70 },
-    { id: 'companyName', label: 'Company Name', minWidth: 90 },
+    {id: 'logo', label: 'Logo', minWidth: 70},
+    {id: 'companyName', label: 'Company Name', minWidth: 90},
     {
         id: 'title',
         label: 'Title',
@@ -46,7 +57,7 @@ const columns: Column[] = [
     },
 ];
 
-const ListOfInternships:FC<{}> = ({}) =>  {
+const ListOfInternships: FC<{}> = ({}) => {
     const classes = useStyles();
     const [internships, setInternships] = useState([]);
     const [page, setPage] = React.useState(0);
@@ -59,17 +70,32 @@ const ListOfInternships:FC<{}> = ({}) =>  {
         setRowsPerPage(+event.target.value);
         setPage(0);
     };
+
+    const remove = (internships: any) => {
+        ApiEmployerClient.deleteInternship(`9ea434ab-34fc-45e4-8803-e8fcacf9efd3`, internships?.id)
+            .then(response => console.log(response))
+            .catch((err: any) => console.log(err));
+    }
+    const edit = (internships: any) => {
+        ApiEmployerClient.editInternship(`9ea434ab-34fc-45e4-8803-e8fcacf9efd3`, internships?.id)
+            .then(response => console.log(response))
+            .catch((err: any) => console.log(err));
+    }
+
+
     useEffect(() => {
-        ApiEmployerClient.getInternships().then(setInternships).catch(err=>console.log(err));
-    },[]);
+        ApiEmployerClient.getInternships().then(setInternships).catch(err => console.log(err));
+    }, []);
+
     return (
         <ThemeProvider theme={theme}>
-            <Paper className={classes.root} sx={{ width: '100%'}}>
-                <TableContainer className={classes.container} sx={{ maxHeight: 640}}>
-                    <Table stickyHeader aria-label="sticky table" >
+            <Paper className={classes.root} sx={{width: '100%'}}>
+                <TableContainer className={classes.container} sx={{maxHeight: 640}}>
+                    <Table stickyHeader aria-label="sticky table">
                         <TableHead>
                             <TableRow>
-                                <TableCell align="center" colSpan={6} style={{backgroundColor:"#4C525C", color:"#fff"}}>
+                                <TableCell align="center" colSpan={6}
+                                           style={{backgroundColor: "#4C525C", color: "#fff"}}>
                                     <h1>Adverts of Internships</h1>
                                 </TableCell>
                             </TableRow>
@@ -78,7 +104,12 @@ const ListOfInternships:FC<{}> = ({}) =>  {
                                     <TableCell
                                         key={column.id}
                                         align={column.align}
-                                        style={{ top: 90, minWidth: column.minWidth ,backgroundColor:"#2165A4", color:"#fff"}}
+                                        style={{
+                                            top: 90,
+                                            minWidth: column.minWidth,
+                                            backgroundColor: "#2165A4",
+                                            color: "#fff"
+                                        }}
                                     >
                                         {column.label}
                                     </TableCell>
@@ -94,16 +125,22 @@ const ListOfInternships:FC<{}> = ({}) =>  {
                                             {columns.map((column) => {
                                                 const value = row[column.id];
                                                 return (
-                                                    <TableCell className={classes.tableBody} key={column.id} align={column.align}>
+                                                    <TableCell className={classes.tableBody} key={column.id}
+                                                               align={column.align}>
                                                         {column.format && typeof value === 'number'
                                                             ? column.format(value)
                                                             : value}
                                                     </TableCell>
                                                 );
                                             })}
+
+                                            <Button onClick={() => edit(internships)}>Edit</Button>
+                                            <Button onClick={() => remove(internships)}>Remove</Button>
+
                                         </TableRow>
                                     );
                                 })}
+
                         </TableBody>
                     </Table>
                 </TableContainer>
@@ -118,6 +155,7 @@ const ListOfInternships:FC<{}> = ({}) =>  {
                 onPageChange={handleChangePage}
                 onRowsPerPageChange={handleChangeRowsPerPage}
             />
+
         </ThemeProvider>
 
     )
