@@ -1,7 +1,7 @@
 import React, {FC, useEffect, useState} from "react";
-import {useStyles} from "../styles/AddInternshipStyle";
-import ApiEmployerClient from "../../api/ApiEmployerClient";
-import theme from "../../../Theme";
+import {useStyles} from "../components/styles/AddInternshipStyle";
+import ApiEmployerClient from "../api/ApiEmployerClient";
+import theme from "../../Theme";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import {
@@ -15,12 +15,12 @@ import {
     TableRow,
     ThemeProvider
 } from '@mui/material';
-import {InternshipVacancy} from "../../../interfaces/HandleInterface";
+import {InternshipVacancy} from "../../interfaces/HandleInterface";
 
 
 
 interface Column {
-    id: 'logo' | 'companyName' | 'title' | 'description' | 'datePosted' | 'contactPhone';
+    id: 'logo' | 'companyName' | 'title' | 'description' | 'datePosted' | 'contactPhone'|'';
     label: string;
     minWidth?: number;
     align?: 'center';
@@ -100,7 +100,7 @@ const ListOfInternships: FC<{}> = ({}) => {
                     <Table stickyHeader aria-label="sticky table">
                         <TableHead>
                             <TableRow>
-                                <TableCell align="center" colSpan={6}
+                                <TableCell align="center" colSpan={8}
                                            style={{backgroundColor: "#4C525C", color: "#fff"}}>
                                     <h1>Adverts of Internships</h1>
                                 </TableCell>
@@ -130,17 +130,26 @@ const ListOfInternships: FC<{}> = ({}) => {
                                         <TableRow hover role="checkbox" tabIndex={-1} /*key={row.companyName}*/ >
                                             {columns.map((column) => {
                                                 const value = row[column.id];
+
                                                 return (
+
                                                     <TableCell className={classes.tableBody} key={column.id}
                                                                align={column.align}>
                                                         {column.format && typeof value === 'number'
                                                             ? column.format(value)
                                                             : value}
+
                                                     </TableCell>
+
                                                 );
+
                                             })}
-                                            <EditIcon onClick={() => edit(internships)}/>
-                                            <DeleteIcon onClick={() => remove(internships)}/>
+                                            <div className={classes.button}>
+                                            <EditIcon style={{color: 'green'}}  id='edit' onClick={() => edit(internships)}/>
+                                            </div>
+                                            <div className={classes.button}>
+                                            <DeleteIcon style={{color: 'red'}} id='delete' onClick={() => remove(internships)}/>
+                                            </div>
                                         </TableRow>
                                     );
                                 })}

@@ -14,7 +14,7 @@ import Support from "./employerClient/sections/pages/Support";
 import Profile from "./employerClient/sections/pages/Profile";
 import Favorite from "./employerClient/sections/pages/Favorite";
 import AddInternship from "./employerClient/sections/pages/AddInternship";
-import ListOfInternships from "./employerClient/sections/components/internshipComponents/ListOfInternships";
+import ListOfInternships from "./employerClient/sections/pages/ListOfInternships";
 
 
 
