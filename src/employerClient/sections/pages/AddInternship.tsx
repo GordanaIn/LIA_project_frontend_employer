@@ -5,7 +5,6 @@ import {useStyles} from "../components/styles/AddInternshipStyle";
 import ApiEmployerClient from "../api/ApiEmployerClient";
 import RegisterButton from "../../button/RegisterButton";
 import theme from "../../Theme";
-import ListOfInternships from "../components/internshipComponents/ListOfInternships";
 import {InternshipVacancy} from "../interfaces/NewHandleInterface";
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 
