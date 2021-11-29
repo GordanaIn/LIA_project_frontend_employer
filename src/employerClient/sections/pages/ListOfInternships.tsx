@@ -1,7 +1,7 @@
 import React, {FC, useEffect, useState} from "react";
 import {useStyles} from "../components/styles/AddInternshipStyle";
 import ApiEmployerClient from "../api/ApiEmployerClient";
-import theme from "../../Theme";
+import theme from "../../../Theme";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import {
@@ -128,7 +128,6 @@ const ListOfInternships: FC<{}> = ({}) => {
                                                 const value = row[column.id];
 
                                                 return (
-
                                                     <TableCell className={classes.tableBody} key={column.id}
                                                                align={column.align}>
                                                         {column.format && typeof value === 'number'

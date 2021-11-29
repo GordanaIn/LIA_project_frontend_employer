@@ -79,11 +79,10 @@ const EditProfile: React.FC<{ company: ICompany  }> = ({company}) => {
                             Cancel
                         </Button>
 
-                        <Button onClick={handleProfileChange} className={classes.button}> <Link to="/displayProfile"
-                                                                                                style={{
-                                                                                                    textDecoration: 'none',
-                                                                                                    color: "#fff"
-                                                                                                }}>
+                        <Button onClick={handleProfileChange} className={classes.button}>
+                            <Link to="/displayProfile" style={{
+                                                  textDecoration: 'none',
+                                                       color: "#fff"}}>
                             Edit Profile </Link>
                         </Button>
 

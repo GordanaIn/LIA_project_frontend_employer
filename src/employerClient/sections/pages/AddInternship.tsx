@@ -1,12 +1,14 @@
 import React, {FC, useState} from "react";
-import {ThemeProvider} from "@material-ui/core/styles";
-import {Button, Grid, Paper, TextField} from "@mui/material";
+import {Grid, TableCell, TableHead, TableRow} from "@mui/material";
 import {useStyles} from "../components/styles/AddInternshipStyle";
 import ApiEmployerClient from "../api/ApiEmployerClient";
 import RegisterButton from "../../button/RegisterButton";
-import theme from "../../Theme";
+import theme from "../../../Theme";
 import {InternshipVacancy} from "../interfaces/NewHandleInterface";
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
+import {Paper, TextField, ThemeProvider,Button} from "@material-ui/core";
+
+
 
 const AddInternship: FC<{internship: InternshipVacancy}> = ({internship}) => {
     const classes = useStyles();
@@ -27,7 +29,6 @@ const AddInternship: FC<{internship: InternshipVacancy}> = ({internship}) => {
             title: title,
             description: description,
             datePosted: datePosted,
-            contactPhone:contactPhone,
             duration:duration,
             requiredNumber:requiredNumber
         };
@@ -48,68 +49,86 @@ const AddInternship: FC<{internship: InternshipVacancy}> = ({internship}) => {
     }
     return (
         <ThemeProvider theme={theme}>
-        <Grid className={classes.root}>
-
+             <Grid className={classes.root} sx={{width: '100%'}}>
                 <Paper elevation={3} className={classes.paper}>
-                    <form   onSubmit={e => onSubmit(e)}>
-                        <h3 className={classes.h3}> Add Internship</h3>
+                    <form onSubmit={e => onSubmit(e)}>
+                        <h1 className={classes.h3}> Add Internship</h1>
                         <div className={classes.cont}>
-                            <div className={classes.username} >
-                                <TextField className={classes.textfield} id="standard-basic" label="Contact Person Name" variant="standard"   value={employerName}
-                                           onChange={e => setEmployerName(e.target.value)}/>
+                            <div className={classes.username0} >
+                                <TextField style={{ paddingLeft:20, paddingRight:20, textAlign:"center",textJustify:'auto'}}
+                                           id="demo-helper-text-misaligned"
+                                           color="primary"
+                                           type='input'
+                                           focused
+                                           helperText="Enter Employer name"  value={employerName}
+                                           onChange={e => setEmployerName(e.target.value)}
+                                />
                             </div>
-                            <div className={classes.username} >
-                                <TextField id="standard-basic" label="Vacancy Title" variant="standard"   value={title}
-                                           onChange={e => setTitle(e.target.value)}/>
+                            <div className={classes.username0} >
+                                <TextField style={{ paddingLeft:20, paddingRight:20, textAlign:"center",textJustify:'auto'}}
+                                           id="demo-helper-text-misaligned"
+                                           color="primary"
+                                           type='input'
+                                           focused
+                                           helperText="Enter Title" value={title}
+                                           onChange={e => setTitle(e.target.value)}
+                                />
                             </div>
-                            <div className={classes.username} >
+                            <div className={classes.username0}>
+                                <TextField   style={{ paddingLeft:20, paddingRight:20, textAlign:"center",textJustify:'auto'}}
+                                             id="demo-helper-text-misaligned"
+                                             color="primary"
+                                             type='input'
+                                             focused
+                                             helperText="Enter Duration"
+                                            value={duration}
+                                            onChange={e => setDuration(e.target.value)}
+                                />
+                            </div>
+                            <div className={classes.username0}>
+                                <TextField   style={{ paddingLeft:20, paddingRight:20, textAlign:"center",textJustify:'auto'}}
+                                             id="demo-helper-text-misaligned"
+                                             color="primary"
+                                             type='input'
+                                             focused
+                                             helperText="Enter Required number"
+                                             value={requiredNumber}
+                                           onChange={e => setRequiredNumber(e.target.value)}
+                                />
+                            </div>
+                            <div className={classes.username0} >
+                                <TextField  type={"date"}
+                                            style={{ paddingLeft:20, paddingRight:20, textAlign:"center",textJustify:'auto'}}
+                                            id="demo-helper-text-misaligned"
+                                            color="primary"
+                                            focused
+                                            helperText="Enter Date"  value={datePosted}
+                                            onChange={e => setDatePosted(e.target.value)}
+                                />
+                            </div>
+                            <div className={classes.username1} >
                                 <TextField
                                     focused
-                                    style={{marginLeft:'1%',textUnderlinePosition:'center', paddingLeft:20, paddingRight:20}}
-                                    helperText="Job Description"
+                                    style={{marginLeft:'1%',textUnderlinePosition:'center'}}
+                                    helperText="Enter your note here"
                                     multiline
-                                    type={"text"}
+                                    type="input"
                                     rows={4}
                                     value={description}
                                     onChange={e => setDescription(e.target.value)}
                                 />
                             </div>
-                            <div className={classes.username} >
-                                <TextField  type={"date"} id="standard-basic"  variant="standard"   value={datePosted}
-                                           onChange={e => setDatePosted(e.target.value)}/>
-                            </div>
-
-                            <div className={classes.username} >
-                                <TextField id="standard-basic" label="contactPhone" variant="standard" value={contactPhone}
-                                           onChange={e => setContactPhone(e.target.value)} />
-                            </div>
-
-                            <div className={classes.password}>
-                                <TextField id="standard-basic"  label="duration" variant="standard" value={duration}
-                                           onChange={e => setDuration(e.target.value)}/>
-                            </div>
-                            <div className={classes.password}>
-                                <TextField id="standard-basic"  label="Number of vacant places" variant="standard" value={requiredNumber}
-                                           onChange={e => setRequiredNumber(e.target.value)}/>
-                            </div>
-                            <div>
-                                <div className={classes.btn}>
-                                    <RegisterButton />
+                                <div className={classes.btn} onClick={() => onSubmit}>
+                                    <RegisterButton   />
                                 </div>
                             </div>
-
-
-                        </div>
+                        <React.Fragment>
+                            <Button href={"/#/listOfInternship"} variant="contained"  color="secondary" className={classes.btn1}>
+                                Go to List of Adverts<DoubleArrowIcon style={{color:"white"}}/>
+                            </Button>
+                        </React.Fragment>
                     </form>
                 </Paper>
-            <React.Fragment>
-                <Button href={"/#/listOfInternship"} variant="contained"  className={classes.btn1}>
-                    Go to List of Adverts<DoubleArrowIcon style={{color:"white"}}/>
-                </Button>
-            </React.Fragment>
-                {/*<Paper  elevation={3} className={classes.paperList}>
-                    <ListOfInternships internship={internship}/>
-                </Paper>*/}
             </Grid>
         </ThemeProvider>
     );

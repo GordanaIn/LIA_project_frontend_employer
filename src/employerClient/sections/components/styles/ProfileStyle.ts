@@ -17,6 +17,13 @@ export const useStyles = makeStyles((theme:Theme) =>
                 justifyContent: 'center',
                 textAlign:'center',
             },
+            title:{
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign:'center',
+                marginTop:50,
+
+            },
             p:{
                 textAlign:'left',
                 alignItems: 'center',
@@ -31,8 +38,6 @@ export const useStyles = makeStyles((theme:Theme) =>
             paper:{
                 justifyContent: 'center',
                 alignItems: 'center',
-                borderColor:"#2f2f31",
-                border:3,
                 marginLeft:350,
                 width:700,
                 height:700,
@@ -148,7 +153,7 @@ export const useStyles = makeStyles((theme:Theme) =>
                 alignItems: 'center',
                 justifyContent: 'center',
                 marginLeft: 120,
-                marginTop: -100,
+                marginTop: 50,
             },
             coloumn2:{
                 alignItems: 'center',
@@ -159,7 +164,8 @@ export const useStyles = makeStyles((theme:Theme) =>
             root5:{
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginTop:100,
+                marginTop:50,
+                marginLeft:50
 
             },
             content:{

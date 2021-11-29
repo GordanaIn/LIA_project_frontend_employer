@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import { useStyles } from './buttonStyles/StylesButton';
 import {ThemeProvider} from "@mui/material";
-import theme from "../Theme";
+import theme from "../../Theme";
 
 export default function RegisterButton() {
     const classes = useStyles();

@@ -66,6 +66,18 @@ export const useStyles = makeStyles((theme:Theme) =>
                 marginTop: 30,
                 marginLeft:122,
             },
+            username0:{
+                alignItems: 'center',
+                marginTop: 30,
+                marginLeft:345,
+            },
+            username1:{
+                alignItems: 'center',
+                marginTop: 30,
+                marginLeft:355,
+
+            },
+
             password:{
                 alignItems: 'center',
                 marginTop: 30,
@@ -102,14 +114,14 @@ export const useStyles = makeStyles((theme:Theme) =>
                 alignItems: 'center',
                 justifyContent: 'center',
                 marginTop: 30,
-                marginLeft:142,
+                marginLeft:390,
             },
             btn1:{
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginTop: 30,
-                marginLeft:142,
-                color:"#2165A4"
+                marginTop: -80,
+                marginLeft:582,
+                color:"#fff"
             },
             tablecall:{
                 [`&.${tableCellClasses.head}`]: {

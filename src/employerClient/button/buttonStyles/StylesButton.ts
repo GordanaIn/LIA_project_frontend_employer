@@ -13,7 +13,7 @@ export const useStyles = makeStyles((theme:Theme) =>
         registerButton:{
             alignItems:"center",
             margin: theme.spacing(1),
-            backgroundColor:'#4C525C',
+            backgroundColor:'#2165A4',
             color:"#fff",
         },
 

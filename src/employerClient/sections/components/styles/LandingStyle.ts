@@ -31,6 +31,11 @@ export const useStyles = makeStyles((theme:Theme) =>
 
 
             },
+            h2: {
+                alignItems: 'center',
+                textAlign: 'center',
+                color: 'black'
+            },
             div:{
                 justifyContent: 'center',
                 alignItems:"center",
@@ -40,6 +45,40 @@ export const useStyles = makeStyles((theme:Theme) =>
                 justifyContent: 'center',
                 width:400,
                 height:500
+            },
+            paper3:{
+                background: 'transparent',
+                color: 'white',
+                border:59,
+                borderRadius:20,
+                borderColor:"#4C525C",
+                marginTop:'10%',
+                marginLeft:'5%',
+                marginRight:'50%',
+            },
+            paper1: {
+                background: 'transparent',
+                paddingBottom: '5%',
+                textAlign: 'center',
+                padding: theme.spacing(6),
+                color: theme.palette.text.secondary,
+                alignItems: "center",
+            },
+            img:{
+                alignItems: "center",
+                width:500,
+                height:500,
+            },
+            text:{
+                alignItems: 'center',
+                textAlign: 'center',
+                color: 'black',
+
+            },
+            con:{
+                alignItems: 'center',
+                marginTop:'-17%',
+                marginLeft:'60%',
             },
             titel:{
                 justifyContent: 'center',
@@ -56,7 +95,19 @@ export const useStyles = makeStyles((theme:Theme) =>
                 paddingLeft: '5%',
                 paddingRight: '5%',
                 textAlign: 'center'
-            }
+            },
+            btn:{
+
+                underline:"none",
+                alignItems: 'center',
+                borderRadius: 20,
+                marginBottom:'10%'
+            },
+            support:{
+                alignItems: 'center',
+                marginTop:'5%'
+            },
+
 
         }),
     )

@@ -1,5 +1,4 @@
 import React, {FC, ReactElement, useEffect, useState} from "react";
-
 import { Paper} from "@material-ui/core";
 import {TextField, ThemeProvider} from "@mui/material";
 import theme from "../../../Theme";
@@ -12,7 +11,7 @@ import EditProfile from "../components/registrationForm/EditProfile";
 const Profile:FC<{}> = ():ReactElement => {
     const classes = useStyles();
     const [loading, setLoading] = useState(true);
-    const [userId, SetUserId] = useState('80d27c88-5101-4374-b101-3d98bca220c0'); //userId with role Employer
+    const [userId, SetUserId] = useState('e4a8b5d1-5e68-4b26-a539-50747d3f0b23');
     const [company, setCompany] = useState<ICompany>();
 
     useEffect(() => {
@@ -26,30 +25,25 @@ const Profile:FC<{}> = ():ReactElement => {
 
 
     return(
-
         <ThemeProvider theme={theme}>
             <div className={classes.root}>
 
                 <Paper elevation={3} className={classes.paper}>
-                    {/*    <form onSubmit={e => onSubmit(e)}>*/}
-
-                    <h1 className={classes.h3}> Company Profile</h1>
-
+                    <h1 className={classes.title}> Company Profile</h1>
                     <div className={classes.root5}>
                         <div className={classes.coloumn1}>
                             <div className={classes.username}>
-                                <TextField className={classes.textfield} id="standard-basic" variant="standard"
+                                <TextField id="standard-basic" variant="standard" helperText="Name"
                                            value={company?.name}/>
                             </div>
                             <div className={classes.username}>
-                                <TextField id="standard-basic" variant="standard" value={company?.orgNumber}/>
+                                <TextField id="standard-basic" helperText="Company orgNumber" variant="standard" value={company?.orgNumber}/>
                             </div>
                             <div className={classes.username}>
-                                <TextField id="standard-basic" variant="standard" value={company?.email}/>
+                                <TextField id="standard-basic" helperText="Email" variant="standard" value={company?.email}/>
                             </div>
-
                             <div className={classes.username}>
-                                <TextField id="standard-basic" variant="standard" value={company?.companyEmail}/>
+                                <TextField id="standard-basic" helperText="Company email" variant="standard" value={company?.companyEmail}/>
                             </div>
 
                         </div>
@@ -58,14 +52,12 @@ const Profile:FC<{}> = ():ReactElement => {
 
                     <div className={classes.button1}>
                         {company ?
-                            <Button variant="contained" color="secondary" component="span">
-                             <EditProfile company={company}/>Edit
-                            </Button>
-                            : null}
+                                    <EditProfile company={company}/>
+                                    : null}
                     </div>
-
                 </Paper>
             </div>
+
         </ThemeProvider>
 
     );
