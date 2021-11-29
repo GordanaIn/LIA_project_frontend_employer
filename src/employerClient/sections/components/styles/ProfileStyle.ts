@@ -38,7 +38,7 @@ export const useStyles = makeStyles((theme:Theme) =>
             paper:{
                 justifyContent: 'center',
                 alignItems: 'center',
-                marginLeft:350,
+                marginLeft:600,
                 width:700,
                 height:700,
             },

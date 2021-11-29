@@ -27,7 +27,6 @@ const Profile:FC<{}> = ():ReactElement => {
     return(
         <ThemeProvider theme={theme}>
             <div className={classes.root}>
-
                 <Paper elevation={3} className={classes.paper}>
                     <h1 className={classes.title}> Company Profile</h1>
                     <div className={classes.root5}>
