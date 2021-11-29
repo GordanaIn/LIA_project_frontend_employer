@@ -132,7 +132,7 @@ export const useStyles = makeStyles((theme:Theme) =>
                     fontSize: 14,
                 },
             },
-            tableRow:{
+            tableRow: {
                 '&:nth-of-type(odd)': {
                     backgroundColor: theme.palette.action.hover,
                 },
@@ -140,6 +140,7 @@ export const useStyles = makeStyles((theme:Theme) =>
                 '&:last-child td, &:last-child th': {
                     border: 0,
                 },
+
             }
         }),
     )

@@ -1,7 +1,10 @@
 import React, {FC, ReactElement, useEffect, useState} from "react";
 import { useStyles } from "../components/styles/LandingStyle";
 import theme from "../../../Theme";
-import { ThemeProvider } from "@mui/material";
+import {Button, Grid, Paper, TextField, ThemeProvider } from "@mui/material";
+import SearchIcon from "@material-ui/icons/Search";
+import {Wallpaper} from "@mui/icons-material";
+import SearchList from "../components/searchComponents/SearchList";
 
 
 
@@ -17,7 +20,12 @@ const SearchPage:FC<{}> = ():ReactElement => {
     return(
         <ThemeProvider theme={theme}>
         <div className={classes.root}>
-            <h1>Search School or Student</h1>
+            <Paper className={classes.div}>
+                <h1 className={classes.titel}>Search School or Student</h1>
+                <div className={classes.p}>
+            <SearchList />
+                </div>
+            </Paper>
         </div>
         </ThemeProvider>
     );

@@ -39,6 +39,10 @@ export const useStyles = makeStyles((theme:Theme) =>
             div:{
                 justifyContent: 'center',
                 alignItems:"center",
+                marginTop:"1%",
+                width:800,
+                height:700
+
             },
             paper:{
                 alignItems: 'center',
@@ -107,7 +111,21 @@ export const useStyles = makeStyles((theme:Theme) =>
                 alignItems: 'center',
                 marginTop:'5%'
             },
+            input: {
+                alignItems: "center",
+            },
 
+            button1: {
+                alignItems: "center",
+                margin: theme.spacing(1),
+                marginLeft: 200,
+                marginTop: -72
+            },
+            grid: {
+                alignItems: "center",
+                marginLeft: 50,
+                marginTop:40
+            },
 
         }),
     )
