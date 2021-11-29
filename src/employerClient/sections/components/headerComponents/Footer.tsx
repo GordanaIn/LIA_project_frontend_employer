@@ -1,5 +1,4 @@
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
+
 import React from "react";
 import {BottomNavigation, CssBaseline, Paper, ThemeProvider} from "@mui/material";
 import theme from "../../../../Theme";
