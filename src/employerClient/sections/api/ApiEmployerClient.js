@@ -5,7 +5,15 @@ const ApiEmployerClient = {
         return fetch("http://localhost:8081/api/internship")
             .then(resp => resp.json());
     },
-
+    updateCompany: async (userId, company) => {
+        const res = await fetch(`http://localhost:8081/api/company/update/${userId}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify(company),
+        })
+    },
     saveInternship:async (internship)=>{
         return  await (await fetch('http://localhost:8081/api/internship/', {
             method: 'POST',
@@ -28,13 +36,18 @@ const ApiEmployerClient = {
         }).then(res=>res.json())
     },
 
-    getEmployerByUser:(employerId)=>{
-        return fetch(`http://localhost:8081/api/employer/${employerId}`, {
-            method: "GET",
-            headers: { "Content-Type": "application/json" }
-        }).then(response => response.json());
+    fetchCompany: (userId) => {
+        return fetch(`http://localhost:8081/api/company/${userId}`).then(res => res.json());
     },
-
+    saveEmployer:async (employer)=>{
+        const response= await (await fetch('http://localhost:8080/api/employer', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify(employer)
+        })).json()
+    },
     updateEmployer: async (employerId,employer) => {
         const res = await fetch(`http://localhost:8081/api/student/update/${employerId}`, {
             method: 'POST',
