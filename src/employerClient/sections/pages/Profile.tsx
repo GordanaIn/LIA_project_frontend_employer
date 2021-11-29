@@ -12,7 +12,7 @@ import EditProfile from "../components/registrationForm/EditProfile";
 const Profile:FC<{}> = ():ReactElement => {
     const classes = useStyles();
     const [loading, setLoading] = useState(true);
-    const [userId, SetUserId] = useState('6a5ae441-44dc-4f7b-ac7f-c4ddf8f2a85b');
+    const [userId, SetUserId] = useState('84beb069-cca4-4726-82d8-17b5a77aad0b');
     const [company, setCompany] = useState<ICompany>();
 
     useEffect(() => {
@@ -42,9 +42,6 @@ const Profile:FC<{}> = ():ReactElement => {
                                            value={company?.name}/>
                             </div>
                             <div className={classes.username}>
-                                <TextField id="standard-basic" variant="standard" value={company?.name}/>
-                            </div>
-                            <div className={classes.username}>
                                 <TextField id="standard-basic" variant="standard" value={company?.orgNumber}/>
                             </div>
                             <div className={classes.username}>
@@ -52,7 +49,7 @@ const Profile:FC<{}> = ():ReactElement => {
                             </div>
 
                             <div className={classes.username}>
-                                <TextField id="standard-basic" variant="standard" value={company?.username}/>
+                                <TextField id="standard-basic" variant="standard" value={company?.companyEmail}/>
                             </div>
 
                         </div>

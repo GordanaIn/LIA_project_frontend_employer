@@ -59,6 +59,8 @@ const ListOfInternships: FC<{}> = ({}) => {
     //Array<InternshipVacancy>
     const classes = useStyles();
     const [internships, setInternships] = useState([]);
+    const [employerId, SetEmployerId] = useState('331338e5-6738-4b33-838d-46fb79f90c58');
+    const [internshipId, SetInternshipId] = useState('549b604a-3a0b-4a94-97a6-2e258199fcc4');
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
     const handleChangePage = (event: unknown, newPage: number) => {
@@ -72,12 +74,12 @@ const ListOfInternships: FC<{}> = ({}) => {
 
     const remove = (internships: InternshipVacancy | any ) => {
         console.log(internships?.id)
-        ApiEmployerClient.deleteInternship(`6614f9d2-6e5a-49ba-a8bf-fb45a3db4053`, internships?.id)
+        ApiEmployerClient.deleteInternship(employerId, internshipId)
             .then(response => console.log(response))
             .catch((err) => console.log(err));
     }
     const edit = (internships: InternshipVacancy | any) => {
-        ApiEmployerClient.editInternship(`6614f9d2-6e5a-49ba-a8bf-fb45a3db4053`, internships?.id)
+        ApiEmployerClient.editInternship(employerId, internshipId)
             .then(response => console.log(response))
             .catch((err: any) => console.log(err));
     }
