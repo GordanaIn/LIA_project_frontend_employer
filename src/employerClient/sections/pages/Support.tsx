@@ -1,6 +1,4 @@
 import React, {FC, ReactElement} from "react";
-import {Paper} from "@material-ui/core";
-import Typography from "@material-ui/core/Typography";
 import {useStyles} from "../components/styles/LandingStyle";
 import {ThemeProvider} from "@mui/material";
 import theme from "../../../Theme";

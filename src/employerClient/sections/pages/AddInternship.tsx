@@ -10,7 +10,7 @@ import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 
 const AddInternship: FC<{internship: InternshipVacancy}> = ({internship}) => {
     const classes = useStyles();
-    const [userId, SetUserId] = useState('d683f003-1928-494c-800b-bc98f4ef0540');
+    const [userId, SetUserId] = useState('80d27c88-5101-4374-b101-3d98bca220c0'); //employer userId
     const [employerName, setEmployerName] = useState("");
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");

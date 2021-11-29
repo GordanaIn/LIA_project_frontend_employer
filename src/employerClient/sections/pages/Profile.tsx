@@ -12,7 +12,7 @@ import EditProfile from "../components/registrationForm/EditProfile";
 const Profile:FC<{}> = ():ReactElement => {
     const classes = useStyles();
     const [loading, setLoading] = useState(true);
-    const [userId, SetUserId] = useState('84beb069-cca4-4726-82d8-17b5a77aad0b');
+    const [userId, SetUserId] = useState('80d27c88-5101-4374-b101-3d98bca220c0'); //userId with role Employer
     const [company, setCompany] = useState<ICompany>();
 
     useEffect(() => {
