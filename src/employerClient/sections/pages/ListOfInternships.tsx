@@ -20,7 +20,7 @@ import {InternshipVacancy} from "../../interfaces/HandleInterface";
 
 
 interface Column {
-    id: 'logo' | 'companyName' | 'title' | 'description' | 'datePosted' | 'contactPhone'|'';
+    id: 'companyName' | 'title' | 'description' | 'datePosted' ;
     label: string;
     minWidth?: number;
     align?: 'center';
@@ -28,7 +28,7 @@ interface Column {
 }
 
 const columns: Column[] = [
-    {id: 'logo', label: 'Logo', minWidth: 70},
+
     {id: 'companyName', label: 'Company Name', minWidth: 90},
     {
         id: 'title',
@@ -51,13 +51,7 @@ const columns: Column[] = [
         align: 'center',
         format: (value: number) => value.toFixed(2),
     },
-    {
-        id: 'contactPhone',
-        label: 'Contact Number',
-        minWidth: 70,
-        align: 'center',
-        format: (value: number) => value.toFixed(2),
-    },
+
 
 ];
 
@@ -144,12 +138,12 @@ const ListOfInternships: FC<{}> = ({}) => {
                                                 );
 
                                             })}
-                                            <div className={classes.button}>
+
                                             <EditIcon style={{color: 'green'}}  id='edit' onClick={() => edit(internships)}/>
-                                            </div>
-                                            <div className={classes.button}>
+
+
                                             <DeleteIcon style={{color: 'red'}} id='delete' onClick={() => remove(internships)}/>
-                                            </div>
+
                                         </TableRow>
                                     );
                                 })}
