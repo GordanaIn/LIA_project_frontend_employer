@@ -59,8 +59,7 @@ const ListOfInternships: FC<{}> = ({}) => {
     //Array<InternshipVacancy>
     const classes = useStyles();
     const [internships, setInternships] = useState([]);
-    const [employerId, SetEmployerId] = useState('80d27c88-5101-4374-b101-3d98bca220c0');
-    const [internshipId, SetInternshipId] = useState('93a9052a-d579-4821-bf23-d3d13d31b46d');
+    const [employerId, SetEmployerId] = useState('3c0478cf-2226-452f-af83-6a6044742c6c');
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
     const handleChangePage = (event: unknown, newPage: number) => {
@@ -72,18 +71,21 @@ const ListOfInternships: FC<{}> = ({}) => {
         setPage(0);
     };
 
-    const remove = (internships: InternshipVacancy | any ) => {
-        console.log(internships?.id)
-        ApiEmployerClient.deleteInternship(employerId, internshipId)
-            .then(response => console.log(response))
+    const remove = (internship: InternshipVacancy  ) => {
+
+        ApiEmployerClient.deleteInternship(employerId, internship?.id)
+            .then(response => getInternship())
             .catch((err) => console.log(err));
+
     }
-    const edit = (internships: InternshipVacancy | any) => {
-        ApiEmployerClient.editInternship(employerId, internshipId)
+    const edit = (internship: InternshipVacancy ) => {
+        ApiEmployerClient.editInternship(employerId, internship?.id)
             .then(response => console.log(response))
             .catch((err: any) => console.log(err));
     }
-
+    let getInternship=()=>{
+        ApiEmployerClient.getInternships().then(setInternships).catch(err => console.log(err));
+    }
 
     useEffect(() => {
         ApiEmployerClient.getInternships().then(setInternships).catch(err => console.log(err));
@@ -140,10 +142,10 @@ const ListOfInternships: FC<{}> = ({}) => {
 
                                             })}
 
-                                            <EditIcon style={{color: 'green'}}  id='edit' onClick={() => edit(internships)}/>
+                                            <EditIcon style={{color: 'green'}}  id='edit' onClick={() => edit(row)}/>
 
 
-                                            <DeleteIcon style={{color: 'red'}} id='delete' onClick={() => remove(internships)}/>
+                                            <DeleteIcon style={{color: 'red'}} id='delete' onClick={() => remove(row)}/>
 
                                         </TableRow>
                                     );

@@ -11,7 +11,7 @@ import EditProfile from "../components/registrationForm/EditProfile";
 const Profile:FC<{}> = ():ReactElement => {
     const classes = useStyles();
     const [loading, setLoading] = useState(true);
-    const [userId, SetUserId] = useState('e4a8b5d1-5e68-4b26-a539-50747d3f0b23');
+    const [userId, SetUserId] = useState('3c0478cf-2226-452f-af83-6a6044742c6c');
     const [company, setCompany] = useState<ICompany>();
 
     useEffect(() => {

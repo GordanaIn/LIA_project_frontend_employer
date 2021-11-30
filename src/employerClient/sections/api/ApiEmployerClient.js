@@ -27,11 +27,11 @@ const ApiEmployerClient = {
     deleteInternship:async (employerId, internshipId)=>{
        return  await fetch(`http://localhost:8081/api/internship/deleteInternship/${employerId}/${internshipId}`, {
             method: 'DELETE',
-        }).then(res=>{console.log();res.json() })
+        });
     },
 
     editInternship:async (employerId, internshipId)=>{
-        return  await fetch(`http://localhost:8081/api/internship/addFavorite/${employerId}/${internshipId}`, {
+        return  await fetch(`http://localhost:8081/api/internship/editInternship/${employerId}/${internshipId}`, {
             method: 'PUT',
         }).then(res=>res.json())
     },
