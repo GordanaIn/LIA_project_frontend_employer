@@ -1,12 +1,10 @@
-
 const ApiEmployerClient = {
 
-    getInternships:() => {
-        return fetch("http://localhost:8081/api/internship")
-            .then(resp => resp.json());
+    fetchCompany: (userId) => {
+        return fetch(`http://localhost:8081/api/company/${userId}`).then(res => res.json());
     },
-    updateCompany: async (userId, company) => {
-        const res = await fetch(`http://localhost:8081/api/company/update/${userId}`, {
+    updateCompanyInfo: async (userId, company) => {
+        const res = await fetch(`http://localhost:8081/api/company/updateCompanyInfo/${userId}`, {
             method: 'PATCH',
             headers: {
                 'Content-type': 'application/json',
@@ -14,8 +12,33 @@ const ApiEmployerClient = {
             body: JSON.stringify(company),
         })
     },
-    saveInternship:async (internship)=>{
-        return  await (await fetch('http://localhost:8081/api/internship/', {
+
+    saveEmployee: async (employee) => {
+        const response = await (await fetch('http://localhost:8080/api/employee', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify(employee)
+        })).json()
+    },
+    updateEmployee: async (employeeId, employee) => {
+        return await fetch(`http://localhost:8081/api/company/update/${employeeId}`, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify(employee),
+        }).then(resp => resp.json());
+    },
+
+    getInternships: () => {
+        return fetch("http://localhost:8081/api/internship")
+            .then(resp => resp.json());
+    },
+
+    addInternship: async (internship) => {
+        return await (await fetch('http://localhost:8081/api/internship/', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
@@ -24,39 +47,22 @@ const ApiEmployerClient = {
         })).json()
     },
 
-    deleteInternship:async (employerId, internshipId)=>{
-       return  await fetch(`http://localhost:8081/api/internship/deleteInternship/${employerId}/${internshipId}`, {
+    deleteInternship: async (employeeId, internshipId) => {
+        return await fetch(`http://localhost:8081/api/internship/deleteInternship/${employeeId}/${internshipId}`, {
             method: 'DELETE',
         });
     },
 
-    editInternship:async (employerId, internshipId)=>{
-        return  await fetch(`http://localhost:8081/api/internship/editInternship/${employerId}/${internshipId}`, {
-            method: 'PUT',
-        }).then(res=>res.json())
+    updateInternship: async (employeeId, internshipAdvert) => {
+        return await fetch(`http://localhost:8081/api/internship/updateInternship/${employeeId}`, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+            },
+            body: JSON.stringify(internshipAdvert)
+        }).then(resp => resp.json());
     },
 
-    fetchCompany: (userId) => {
-        return fetch(`http://localhost:8081/api/company/${userId}`).then(res => res.json());
-    },
-    saveEmployer:async (employer)=>{
-        const response= await (await fetch('http://localhost:8080/api/employer', {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json',
-            },
-            body: JSON.stringify(employer)
-        })).json()
-    },
-    updateEmployer: async (employerId,employer) => {
-        const res = await fetch(`http://localhost:8081/api/student/update/${employerId}`, {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json',
-            },
-            body: JSON.stringify(employer),
-        })
-    },
 }
 
 export default ApiEmployerClient;

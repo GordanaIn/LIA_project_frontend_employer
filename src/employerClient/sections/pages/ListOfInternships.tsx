@@ -79,7 +79,7 @@ const ListOfInternships: FC<{}> = ({}) => {
 
     }
     const edit = (internship: InternshipVacancy ) => {
-        ApiEmployerClient.editInternship(employerId, internship?.id)
+        ApiEmployerClient.updateInternship(employerId, internship?.id)
             .then(response => console.log(response))
             .catch((err: any) => console.log(err));
     }

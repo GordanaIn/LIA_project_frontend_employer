@@ -33,7 +33,7 @@ const AddInternship: FC<{internship: InternshipVacancy}> = ({internship}) => {
             requiredNumber:requiredNumber
         };
         console.log(internshipVacancy)
-        ApiEmployerClient.saveInternship(internshipVacancy).then(res=>alert("Registration is successful")).catch(err=>console.log(err));
+        ApiEmployerClient.addInternship(internshipVacancy).then(res=>alert("Registration is successful")).catch(err=>console.log(err));
         //clear item
        clearItem();
 

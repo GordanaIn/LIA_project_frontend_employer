@@ -36,7 +36,7 @@ const EditProfile: React.FC<{ company: ICompany  }> = ({company}) => {
             email: email,
             username:username
         }
-        ApiEmployerClient.updateCompany(userId,company).then(res=>alert("Edited Successfully")).catch(err => console.log(err));
+        ApiEmployerClient.updateCompanyInfo(userId,company).then(res=>alert("Edited Successfully")).catch(err => console.log(err));
         console.log(company)
     }
 
