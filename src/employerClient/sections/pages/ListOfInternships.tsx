@@ -59,7 +59,7 @@ const ListOfInternships: FC<{}> = ({}) => {
     //Array<InternshipVacancy>
     const classes = useStyles();
     const [internships, setInternships] = useState([]);
-    const [employerId, SetEmployerId] = useState('3c0478cf-2226-452f-af83-6a6044742c6c');
+    const [employerId, SetEmployerId] = useState('2ff94b34-9143-4231-a92d-5ea8a6c5561a');
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
     const handleChangePage = (event: unknown, newPage: number) => {

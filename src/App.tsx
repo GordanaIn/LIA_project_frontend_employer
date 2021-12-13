@@ -11,7 +11,7 @@ import LandingPage from "./employerClient/sections/pages/LandingPage";
 
 import SearchPage from "./employerClient/sections/pages/SearchPage";
 import Support from "./employerClient/sections/pages/Support";
-import Profile from "./employerClient/sections/pages/Profile";
+import CompanyProfile from "./employerClient/sections/pages/CompanyProfile";
 import Favorite from "./employerClient/sections/pages/Favorite";
 import AddInternship from "./employerClient/sections/pages/AddInternship";
 import ListOfInternships from "./employerClient/sections/pages/ListOfInternships";
@@ -26,7 +26,7 @@ function App() {
                 <Route exact path="/home" component={LandingPage}/>
                 <Route path="/addInternship" exact={true} component={AddInternship}/>
                 <Route exact path="/search" component={SearchPage}/>
-                <Route exact path="/profile" component={Profile}/>
+                <Route exact path="/profile" component={CompanyProfile}/>
                 <Route exact path="/favorite" component={Favorite}/>
                 <Route exact path="/support" component={Support}/>
                 <Route path="/listOfInternship"  exact={true} component={ListOfInternships}/>

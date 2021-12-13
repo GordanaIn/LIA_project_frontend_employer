@@ -12,12 +12,11 @@ import {Paper, TextField, ThemeProvider,Button} from "@material-ui/core";
 
 const AddInternship: FC<{internship: InternshipVacancy}> = ({internship}) => {
     const classes = useStyles();
-    const [userId, SetUserId] = useState('e15b61ca-c301-417a-9971-c2667a9c7ea3'); //employer userId
+    const [userId, SetUserId] = useState('2ff94b34-9143-4231-a92d-5ea8a6c5561a'); //employer userId
     const [employerName, setEmployerName] = useState("");
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [datePosted, setDatePosted] = useState("");
-    const [contactPhone, setContactPhone] = useState("");
     const [duration, setDuration] = useState("");
     const [requiredNumber, setRequiredNumber] = useState("");
 
@@ -43,7 +42,6 @@ const AddInternship: FC<{internship: InternshipVacancy}> = ({internship}) => {
         setEmployerName(" ");
         setDescription(" ");
         setDatePosted(" ");
-        setContactPhone(" ");
         setDuration(" ");
         setRequiredNumber(" ");
     }

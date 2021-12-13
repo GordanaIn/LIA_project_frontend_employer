@@ -8,10 +8,10 @@ import {ICompany} from "../../interfaces/HandleInterface";
 import {useStyles} from "../components/styles/ProfileStyle";
 import EditProfile from "../components/registrationForm/EditProfile";
 
-const Profile:FC<{}> = ():ReactElement => {
+const CompanyProfile:FC<{}> = ():ReactElement => {
     const classes = useStyles();
     const [loading, setLoading] = useState(true);
-    const [userId, SetUserId] = useState('3c0478cf-2226-452f-af83-6a6044742c6c');
+    const [userId, SetUserId] = useState('2ff94b34-9143-4231-a92d-5ea8a6c5561a');
     const [company, setCompany] = useState<ICompany>();
 
     useEffect(() => {
@@ -61,4 +61,4 @@ const Profile:FC<{}> = ():ReactElement => {
 
     );
 }
-export default Profile;
+export default CompanyProfile;
