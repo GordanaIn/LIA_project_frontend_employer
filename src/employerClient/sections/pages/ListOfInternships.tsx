@@ -16,6 +16,7 @@ import {
     ThemeProvider
 } from '@mui/material';
 import {InternshipVacancy} from "../../interfaces/HandleInterface";
+import EditInternship from "./EditInternship";
 
 
 
@@ -59,7 +60,7 @@ const ListOfInternships: FC<{}> = ({}) => {
     //Array<InternshipVacancy>
     const classes = useStyles();
     const [internships, setInternships] = useState([]);
-    const [employerId, SetEmployerId] = useState('2ff94b34-9143-4231-a92d-5ea8a6c5561a');
+    const [employerId, SetEmployerId] = useState('617f0037-d290-4ed2-841f-bf06f93c4d32');
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
     const handleChangePage = (event: unknown, newPage: number) => {
@@ -142,7 +143,7 @@ const ListOfInternships: FC<{}> = ({}) => {
 
                                             })}
 
-                                            <EditIcon style={{color: 'green'}}  id='edit' onClick={() => edit(row)}/>
+                                            <EditInternship  advert={row}/>
 
 
                                             <DeleteIcon style={{color: 'red'}} id='delete' onClick={() => remove(row)}/>

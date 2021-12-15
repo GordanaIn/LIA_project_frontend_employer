@@ -12,7 +12,7 @@ import {Paper, TextField, ThemeProvider,Button} from "@material-ui/core";
 
 const AddInternship: FC<{internship: InternshipVacancy}> = ({internship}) => {
     const classes = useStyles();
-    const [userId, SetUserId] = useState('2ff94b34-9143-4231-a92d-5ea8a6c5561a'); //employer userId
+    const [userId, SetUserId] = useState('617f0037-d290-4ed2-841f-bf06f93c4d32'); //employer userId
     const [employerName, setEmployerName] = useState("");
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");

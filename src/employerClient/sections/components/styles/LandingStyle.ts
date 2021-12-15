@@ -11,18 +11,24 @@ export const useStyles = makeStyles((theme:Theme) =>
                     margin: theme.spacing(8),
                 },
             },
+            list :{
+                background:'gray',
+                width:400,
+                height:200
+            },
             h1:{
                 alignItems: 'center',
                 justifyContent: 'center',
                 textAlign:'center',
 
             },
+
             p:{
                 justifyContent: 'center',
                 alignItems:"center",
                 textAlign:'center',
                 marginLeft:10,
-
+                color:"black"
             },
             h3:{
                 justifyContent: 'center',
@@ -47,7 +53,7 @@ export const useStyles = makeStyles((theme:Theme) =>
             paper:{
                 alignItems: 'center',
                 justifyContent: 'center',
-                width:400,
+                width:500,
                 height:500
             },
             paper3:{
@@ -124,7 +130,37 @@ export const useStyles = makeStyles((theme:Theme) =>
             grid: {
                 alignItems: "center",
                 marginLeft: 50,
+                marginTop:50
+            },
+            container:{
+                alignItems: 'center',
+                justifyContent: 'center',
                 marginTop:40
+            },
+            content:{
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: 500,
+                height: 500
+            },
+            username: {
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginLeft: 50,
+                marginTop: 17,
+            },
+            button: {
+                textAlign: 'center',
+                marginLeft: 100,
+                marginTop: 10,
+                backgroundColor:"#1bc008"
+            },
+            button6: {
+                color:"#fff",
+                textAlign: 'center',
+                marginLeft: 100,
+                marginTop: 10,
+                backgroundColor:"#c40606"
             },
 
         }),

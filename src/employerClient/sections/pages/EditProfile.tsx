@@ -1,10 +1,10 @@
-import {ICompany} from "../../../interfaces/HandleInterface";
+import {ICompany} from "../../interfaces/HandleInterface";
 import { DialogActions, DialogContent, IconButton, Paper, TextField, ThemeProvider} from "@material-ui/core";
 import Button from '@material-ui/core/Button';
-import theme from "../../../../Theme";
+import theme from "../../../Theme";
 import {useState} from "react";
-import {useStyles} from "../styles/ProfileStyle";
-import ApiEmployerClient from "../../api/ApiEmployerClient";
+import {useStyles} from "../components/styles/ProfileStyle";
+import ApiEmployerClient from "../api/ApiEmployerClient";
 import EditIcon from "@material-ui/icons/Edit";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
@@ -13,12 +13,9 @@ import {Link} from 'react-router-dom'
 const EditProfile: React.FC<{ company: ICompany  }> = ({company}) => {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
-    const [userId, setUserId] = useState(company?.userId);
+    const [userId, setUserId] = useState('617f0037-d290-4ed2-841f-bf06f93c4d32');
     const [name, setName] = useState(company?.name);
     const [orgNumber, setOrgName] = useState(company?.orgNumber);
-    const [companyEmail, setCompanyEmail] = useState(company?.companyEmail);
-    const [email, setEmail] = useState(company?.email);
-    const [username, setUsername] = useState(company?.username);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -32,11 +29,13 @@ const EditProfile: React.FC<{ company: ICompany  }> = ({company}) => {
         const company = {
             name: name,
             orgNumber: orgNumber,
+            userId:userId
+            /*,
             companyEmail:companyEmail,
             email: email,
-            username:username
+            username:username*/
         }
-        ApiEmployerClient.updateCompanyInfo(userId,company).then(res=>alert("Edited Successfully")).catch(err => console.log(err));
+        ApiEmployerClient.updateCompanyInfo(company).then(res=>alert("Edited Successfully")).catch(err => console.log(err));
         console.log(company)
     }
 
@@ -54,26 +53,7 @@ const EditProfile: React.FC<{ company: ICompany  }> = ({company}) => {
                             <TextField id="standard-basic" label=" Name" variant="standard" value={name}
                                        onChange={e => setName(e.target.value)}/>
                         </div>
-                        <div className={classes.username}>
-                            <TextField id="standard-basic" label="Organization Number" variant="standard" value={orgNumber}
-                                       onChange={e => setOrgName(e.target.value)}/>
-                        </div>
-                        <div className={classes.username}>
-                            <TextField id="standard-basic" label="Company Email" variant="standard" value={companyEmail}
-                                       onChange={e => setCompanyEmail(e.target.value)}/>
-                        </div>
-                        <div className={classes.username}>
-                            <TextField id="standard-basic" label="Email" variant="standard" value={email}
-                                       onChange={e => setEmail(e.target.value)}/>
-                        </div>
-
-                        <div className={classes.username}>
-                            <TextField id="standard-basic" label="Username" variant="standard" value={username}
-                                       onChange={e => setUsername(e.target.value)}/>
-                        </div>
-
-
-                    </DialogContent>
+                   </DialogContent>
                     <DialogActions>
                         <Button onClick={handleClose} className={classes.button6}>
                             Cancel

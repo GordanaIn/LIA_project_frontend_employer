@@ -6,12 +6,12 @@ import ApiEmployerClient from "../api/ApiEmployerClient";
 import Button from "@material-ui/core/Button";
 import {ICompany} from "../../interfaces/HandleInterface";
 import {useStyles} from "../components/styles/ProfileStyle";
-import EditProfile from "../components/registrationForm/EditProfile";
+import EditProfile from "./EditProfile";
 
 const CompanyProfile:FC<{}> = ():ReactElement => {
     const classes = useStyles();
     const [loading, setLoading] = useState(true);
-    const [userId, SetUserId] = useState('2ff94b34-9143-4231-a92d-5ea8a6c5561a');
+    const [userId, SetUserId] = useState('617f0037-d290-4ed2-841f-bf06f93c4d32');
     const [company, setCompany] = useState<ICompany>();
 
     useEffect(() => {
@@ -37,12 +37,6 @@ const CompanyProfile:FC<{}> = ():ReactElement => {
                             </div>
                             <div className={classes.username}>
                                 <TextField id="standard-basic" helperText="Company orgNumber" variant="standard" value={company?.orgNumber}/>
-                            </div>
-                            <div className={classes.username}>
-                                <TextField id="standard-basic" helperText="Email" variant="standard" value={company?.email}/>
-                            </div>
-                            <div className={classes.username}>
-                                <TextField id="standard-basic" helperText="Company email" variant="standard" value={company?.companyEmail}/>
                             </div>
 
                         </div>
